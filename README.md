@@ -44,3 +44,45 @@ git commit -m "日常更新"
 git pull origin main
 git push origin main
 ```
+
+## 三、关于项目结构（后续也可扩充）
+MCM_Latex2026
+│   .Rhistory
+│   MCM-ICM_Summary.log
+│   MCM-ICM_Summary.pdf
+│   MCM-ICM_Summary.tex    //写摘要的tex文件
+│   mcmthesis-demo-blx.bib
+│   mcmthesis-demo.aux
+│   mcmthesis-demo.bbl
+│   mcmthesis-demo.log
+│   mcmthesis-demo.out
+│   mcmthesis-demo.pdf
+│   mcmthesis-demo.run.xml
+│   mcmthesis-demo.synctex.gz
+│   mcmthesis-demo.tex    //这个是核心的tex编写文件！！！
+│   mcmthesis-demo.toc
+│   mcmthesis.cls
+│   mcmthesis.synctex.gz
+│   MCM_Latex2024.Rproj
+│   README.md
+│   table2latex.txt
+│   texput.log
+│
+├───code
+│   │   mcmthesis-matlab1.m       //放一些其他零零散散的小代码
+│   │   mcmthesis-sudoku.cpp
+│   │
+│   ├───Python    //放python代码
+│   │       func1.py
+│   │       func2.py
+│   │
+│   └───SPSS     //放SPSS相关数据文件
+│           todo - 副本.txt
+│           todo.txt
+│
+└───figures
+        fig1.jpg
+        fig2.jpg
+        fig24.JPG
+        mcmthesis-aaa-eps-converted-to.pdf
+        mcmthesis-logo.pdf
