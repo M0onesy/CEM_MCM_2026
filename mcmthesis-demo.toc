@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {9.1}Strength}{10}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Weakness}{11}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Further Discussion}{11}{section.10}%
-\contentsline {section}{Reference}{12}{section*.1}%
-\contentsline {section}{Appendices}{14}{section*.2}%
+\contentsline {section}{Reference}{12}{section*.6}%
+\contentsline {section}{Appendices}{14}{section*.7}%
 \contentsline {section}{Appendix \numberline {A}First appendix}{14}{appendix.1.A}%
 \contentsline {section}{Appendix \numberline {B}Second appendix}{14}{appendix.1.B}%
