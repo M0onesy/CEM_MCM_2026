@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.7)  30 JAN 2026 10:21
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.7)  30 JAN 2026 14:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1160,24 +1160,11 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [2]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 96.
-
-
-LaTeX Warning: Citation '1' on page 3 undefined on input line 104.
-
-
-LaTeX Warning: Citation '2' on page 3 undefined on input line 106.
-
-
-LaTeX Warning: Citation '3' on page 3 undefined on input line 106.
-
-
-LaTeX Warning: Citation '4' on page 3 undefined on input line 108.
-
+(Font)              scaled to size 14.4pt on input line 97.
 
 
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 121.
+(Font)              scaled to size 10.95pt on input line 133.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1187,10 +1174,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3]
 
-LaTeX Warning: Citation '5' on page 4 undefined on input line 149.
+LaTeX Warning: Citation '5' on page 4 undefined on input line 142.
 
 
-LaTeX Warning: Citation '6' on page 4 undefined on input line 153.
+LaTeX Warning: Citation '6' on page 4 undefined on input line 146.
 
 
 
@@ -1202,6 +1189,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [4]
+File: ./figures/fig1.jpg Graphic file (type bmp)
+<./figures/fig1.jpg>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1211,9 +1205,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [5]
-File: ./figures/fig1.jpg Graphic file (type bmp)
-<./figures/fig1.jpg>
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1227,7 +1218,7 @@ File: ./figures/fig2.jpg Graphic file (type bmp)
 <./figures/fig2.jpg>
 
 
-LaTeX Warning: Citation '5' on page 7 undefined on input line 233.
+LaTeX Warning: Citation '5' on page 7 undefined on input line 226.
 
 
 
@@ -1270,15 +1261,6 @@ File: ./figures/fig24.jpg Graphic file (type bmp)
 <./figures/fig24.jpg>
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
-[][]$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][] [] [][][][] [] [][][][][][][][] [] [][][][][][] [] [][][] []
- []
-
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1287,6 +1269,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+[][]$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][] [] [][][][] [] [][][][][][][][] [] [][][][][][] [] [][][] []
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1306,13 +1293,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [13]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 496.
+(Font)              scaled to size 24.88pt on input line 489.
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
 
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 505.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 498.
 (./code/mcmthesis-matlab1.m
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 (Font)              scaled to size 10.0pt on input line 1.
@@ -1359,8 +1346,14 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `mcmthesis-demo.out' has not changed.
-(rerunfilecheck)             Checksum: 9C56CDD1C672DFE8B30DF02D224520E2;6162.
+
+Package rerunfilecheck Warning: File `mcmthesis-demo.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `mcmthesis-demo.out':
+(rerunfilecheck)             Before: 9179497ACF4838C5972360A6BE0A6A44;6008
+(rerunfilecheck)             After:  8AD3308A8BE02D501819A3391A6FE250;6013.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                mcmthesis-demo
@@ -1373,7 +1366,7 @@ Package logreq Info: Writing requests to 'mcmthesis-demo.run.xml'.
 Here is how much of TeX's memory you used:
  27579 strings out of 473832
  520498 string characters out of 5733159
- 1670892 words of memory out of 5000000
+ 1670711 words of memory out of 5000000
  50185 multiletter control sequences out of 15000+600000
  571320 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
