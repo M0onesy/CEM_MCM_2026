@@ -1,0 +1,24 @@
+{
+  "2023": {
+    "avg_attendance": 4067,
+    "attendance_pct": 22.6,
+    "avg_ticket_price": 45,
+    "ticket_revenue": 3660300,
+    "valuation": 30000000
+  },
+  "2024": {
+    "avg_attendance": 17000,
+    "attendance_pct": 94.4,
+    "avg_ticket_price": 85,
+    "ticket_revenue": 28900000,
+    "valuation": 100000000
+  },
+  "impact": {
+    "attendance_increase": 12933,
+    "attendance_increase_pct": 317.9985247110893,
+    "ticket_revenue_increase": 25239700,
+    "ticket_revenue_increase_pct": 689.5527688987241,
+    "valuation_increase": 70000000,
+    "valuation_increase_pct": 233.33333333333334
+  }
+}
