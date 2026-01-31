@@ -94,58 +94,54 @@ Heat transfer, Thermodynamic system, CFD, Energy conservation
 \section{Introduction}
 
 
+\subsection{Problem Background}
+Professional sports represent a unique intersection of athletic competition and business enterprise.While team success is traditionally measured by wins and championships, franchise owners ultimately seek to maximize long-term profit and franchise value. Player compensation, roster construction, and strategic investment decisions must therefore balance athletic contribution with economic return. These decisions are further constrained by league regulations such as salary caps, roster limits, and revenue-sharing policies, which limit purely performance-driven or profit-driven strategies.
+
+The WNBA provides a representative setting for studying this trade-off due to its recent growth in media exposure, fan engagement, and franchise valuation alongside continued structural and financial constraints. For teams such as the Las Vegas Aces, management must evaluate players based not only on statistical performance but also on market influence, risk exposure, and future potential. This environment necessitates the development of an integrated modeling framework that quantitatively links player performance, financial outcomes, and strategic decision-making under dynamic and uncertain conditions.
+
 \subsection{Problem Restatement}
-
-We are required to establish a model to determine the change of water temperature in space and time. Then we are expected to propose the best strategy for the person in the bathtub to keep the water temperature close to initial temperature and even throughout the tub. Reduction of waste of water is also needed. In addition, we have to consider the impact of different conditions on our model, such as different shapes and volumes of the bathtub, etc.
-
-In order to solve those problems, we will proceed as follows:
+To address the objectives of this problem, we must construct an integrated analytical framework that supports strategic decision-making for a professional WNBA team. Specifically, we aim to:
 
 \begin{itemize}
-\item {\bf Stating assumptions}. By stating our assumptions, we will narrow the focus of our approach towards the problems and provide some insight into bathtub water temperature issues.
+\item {\bf Quantifying individual player value}. We will quantify their value by incorporating both on-court performance and commercial impact.
 
-\item {\bf Making notations}. We will give some notations which are important for us to clarify our models.
+\item {\bf Developing a financial model}. The model will link team composition, operating costs, and revenue generation to overall profitability and franchise value.
+\item {\bf Establishing a dynamic decision-making mechanism}. We'll adjust roster and investment strategies in response to changes in performance, injury status, and economic conditions.
 
-\item {\bf Presenting our model}. In order to investigate the problem deeper, we divide our model into two sub-models. One is a steady convection heat transfer sub-model in which hot water is added constantly. The other one is an unsteady convection heat transfer sub-model where hot water is added discontinuously.
+\item {\bf Evaluating player acquisition strategies}. We'll discuss strategies under league constraints such as salary caps and roster limits.
 
-\item {Defining evaluation criteria and comparing sub-models}. We define two main criteria to evaluate our model: the mean temperature of bath water and the amount of inflow water.
+\item {\bf Assessing the impact of external structural changes}.We'll put typical changes into consideration,such as league expansion, on team profitability and competitive positioning.
 
-\item {\bf Analysis of influencing factors}. In term of the impact of different factors on our model, we take those into consideration: the shape and volume of the tub, the shape/volume/temperature of the person in the bathtub, the motions made by the person in the bathtub and adding a bubble bath additive initially.
-
-\item {\bf Model testing and sensitivity analysis}. With the criteria defined before, we evaluate the reliability of our model and do the sensitivity analysis.
-
-\item {\bf Further discussion}. We discuss about different ways to arrange inflow faucets. Then we improve our model to apply them in reality.
-
-\item {\bf Evaluating the model}. We discuss about the strengths and weaknesses of our model:
-
-\begin{itemize}
-\item[1)] ... 
-\item[2)] ...
-\item[3)] ...
-\item[4)] ...
-\end{itemize}
-
-\end{itemize}
 
 \subsection{Problem Analysis}
+The problem contains several interconnected components that require structured modeling.
 
-Bathing in a tub is a perfect choice for those who have been worn out after a long day's working. A traditional bathtub is a simply water containment vessel without a secondary heating system or circulating jets. Thus the temperature of water in bathtub declines noticeably as time goes by, which will influent the experience of bathing. As a result, the bathing person needs to add a constant trickle of hot water from a faucet to reheat the bathing water. This way of bathing will result in waste of water because when the capacity of the bathtub is reached, excess water overflows the tub.
+First, player evaluation must extend beyond traditional performance statistics. Athletic contribution influences team wins, while popularity and market appeal affect revenue streams such as ticket sales, merchandise, and media exposure. Therefore, player value should be modeled as a multi-dimensional construct combining competitive and commercial factors.
 
-An optimal bathing strategy is required for the person in a bathtub to get comfortable bathing experience while reducing the waste of water.
+Second, team profitability depends on both revenue generation and cost control. Revenue is influenced by team performance, player marketability, and external market conditions, whereas costs are constrained by salary structures and league regulations. A financial optimization framework is required to determine sustainable investment levels.
+
+Third, decision-making is dynamic rather than static. Player injuries, aging effects, and economic fluctuations introduce uncertainty over time. Consequently, the model must incorporate risk and allow for strategic adjustment across multiple periods.
+
+Finally, league-level policies, including salary caps and potential expansion, impose structural constraints that alter optimal strategies. These constraints must be explicitly embedded within the modeling framework.
 
 \section{Assumptions and Justifications}
 
 To simplify the problem and make it convenient for us to simulate real-life conditions, we make the following basic assumptions, each of which is properly justified.
 
 \begin{itemize}
-\item {\bf The bath water is incompressible Non-Newtonian fluid}. The incompressible Non-Newtonian fluid is the basis of Navier–Stokes equations which are introduced to simulate the flow of bath water.
+\item {\bf Player performance can be represented by aggregated statistical indicators.}
+We assume that a player’s athletic contribution can be sufficiently captured by key performance metrics such as scoring efficiency, rebounds, assists, and defensive impact, which are publicly available and measurable.
 
-\item {\bf All the physical properties of bath water, bathtub and air are assumed to be stable}. The change of those properties like specific heat, thermal conductivity and density is rather small according to some studies \cite{5}. It is complicated and unnecessary to consider these little change so we ignore them.
+\item {\bf Commercial impact of a player can be approximated using measurable proxies.}
+We assume that a player’s commercial value can be estimated using observable indicators such as media exposure, popularity, and merchandise influence.
 
-\item {\bf There is no internal heat source in the system consisting of bathtub, hot water and air}. Before the person lies in the bathtub, no internal heat source exist except the system components. The circumstance where the person is in the bathtub will be investigated in our later discussion.
+\item {\bf Team revenue is positively correlated with competitive performance and player marketability.}
+We assume that improved team performance increases revenue streams such as ticket sales, sponsorship value, and media exposure. Additionally, high-profile players contribute independently to revenue generation.
 
-\item {\bf We ignore radiative thermal exchange}. According to Stefan-Boltzmann’s law, the radiative thermal exchange can be ignored when the temperature is low. Refer to industrial standard \cite{6}, the temperature in bathroom is lower than 100 $^{\circ}$C, so it is reasonable for us to make this assumption.
+\item {\bf Salary cap and roster constraints are binding and strictly enforced.}.
+We assume that league regulations, including salary caps and roster limits, restrict feasible roster construction strategies.
 
-\item {\bf The temperature of the adding hot water from the faucet is stable}. This hypothesis can be easily achieved in reality and will simplify our process of solving the problem.
+\item {\bf  Player aging and injury risk affect future performance probabilistically.}. This hypothesis can be easily achieved in reality and will simplify our process of solving the problem.
 \end{itemize}
 
 \section{Notations}
