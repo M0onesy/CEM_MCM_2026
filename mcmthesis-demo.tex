@@ -111,7 +111,7 @@ To address the objectives of this problem, we must construct an integrated analy
 \item {\bf Evaluating player acquisition strategies}. We'll discuss strategies under league constraints such as salary caps and roster limits.
 
 \item {\bf Assessing the impact of external structural changes}.We'll put typical changes into consideration,such as league expansion, on team profitability and competitive positioning.
-
+\end{itemize}
 
 \subsection{Problem Analysis}
 The problem contains several interconnected components that require structured modeling.
@@ -130,18 +130,46 @@ To simplify the problem and make it convenient for us to simulate real-life cond
 
 \begin{itemize}
 \item {\bf Player performance can be represented by aggregated statistical indicators.}
+
 We assume that a player’s athletic contribution can be sufficiently captured by key performance metrics such as scoring efficiency, rebounds, assists, and defensive impact, which are publicly available and measurable.
 
+Aggregated statistics provide an objective and standardized representation of on-court contribution. These indicators are widely used in professional analytics and allow for quantitative comparison across players.
+
 \item {\bf Commercial impact of a player can be approximated using measurable proxies.}
+
 We assume that a player’s commercial value can be estimated using observable indicators such as media exposure, popularity, and merchandise influence.
 
+Direct financial contribution of individual players is difficult to isolate due to shared team revenue streams.So,proxy variables are necessary to approximate market influence in a consistent and data-driven manner.
+
 \item {\bf Team revenue is positively correlated with competitive performance and player marketability.}
+
 We assume that improved team performance increases revenue streams such as ticket sales, sponsorship value, and media exposure. Additionally, high-profile players contribute independently to revenue generation.
 
+Empirical evidence from professional sports economics suggests that winning teams attract higher attendance and commercial attention. Furthermore, superstar players often generate revenue beyond performance-related outcomes.
+
 \item {\bf Salary cap and roster constraints are binding and strictly enforced.}.
+
 We assume that league regulations, including salary caps and roster limits, restrict feasible roster construction strategies.
 
+WNBA teams operate under formal league governance structures that limit payroll flexibility. These constraints must be embedded in the optimization framework to ensure realistic and implementable solutions.
+
 \item {\bf  Player aging and injury risk affect future performance probabilistically.}. This hypothesis can be easily achieved in reality and will simplify our process of solving the problem.
+
+We assume that player performance declines gradually with age and may be reduced under injury scenarios, modeled through risk-adjusted performance factors.
+
+Athletic performance follows a life-cycle pattern in professional sports. Incorporating age and injury uncertainty improves the realism of long-term value estimation and supports dynamic decision-making.
+
+\item{\bf Management decisions are rational and profit-oriented.}
+
+We assume that team management aims to maximize a weighted objective function that balances competitive success and financial return.
+
+Although real-world decisions may include behavioral factors, modeling rational optimization allows us to derive systematic and interpretable strategies aligned with ownership objectives.
+
+\item {\bf External market conditions remain relatively stable within a single season.}
+
+We assume no extreme macroeconomic shocks occur during the modeled season.
+
+This assumption simplifies the dynamic model and isolates the impact of roster and strategic decisions from unpredictable macroeconomic disruptions.
 \end{itemize}
 
 \section{Notations}
@@ -149,21 +177,21 @@ We assume that league regulations, including salary caps and roster limits, rest
 \begin{center}
 \begin{tabular}{clc}
 {\bf Symbols} & {\bf Description} & \quad {\bf Unit} \\[0.25cm]
-$h$ & Convection heat transfer coefficient & \quad W/(m$^2 \cdot$ K) 
-\\[0.2cm]
-$k$ & Thermal conductivity & \quad W/(m $\cdot$ K) \\[0.2cm]
-$c_p$ & Specific heat & \quad J/(kg $\cdot$ K) \\[0.2cm]
-$\rho$ & Density & \quad kg/m$^2$ \\[0.2cm]
-$\delta$ & Thickness & \quad m \\[0.2cm]
-$t$ & Temperature & \quad $^\circ$C, K \\[0.2cm]
-$\tau$ & Time & \quad s, min, h \\[0.2cm]
-$q_m$ & Mass flow & \quad kg/s \\[0.2cm]
-$\Phi$ & Heat transfer power & \quad W \\[0.2cm]
-$T$ & A period of time & \quad s, min, h \\[0.2cm]
-$V$ & Volume & \quad m$^3$, L \\[0.2cm]
-$M,\,m$ & Mass & \quad kg \\[0.2cm]
-$A$ & Aera & \quad m$^2$ \\[0.2cm]
-$a,\,b,\,c$ & The size of a bathtub  & \quad m$^3$
+$V_total$ & Total player value & \quad USD \\[0.2cm]
+$V_perf$ & Performance-based value & \quad USD \\[0.2cm]
+$V_comm$ & Commercial value & \quad USD \\[0.2cm]
+$\alpha$ &Performance weight in objective function & \quad - \\[0.2cm]
+$WAR$ & Wins Above Replacement & \quad wins \\[0.2cm]
+$BPM$ & Box Plus/Minus & \quad points/100 poss \\[0.2cm]
+$VPW$ & Value Per Win & \quad USD/win \\[0.2cm]
+$R$ & Total revenue & \quad USD \\[0.2cm]
+$C$ &Total costs & \quad USD\\[0.2cm]
+$\pi$ & Operating profit & \quad USD \\[0.2cm]
+$Cap$ & Salary cap & \quad USD \\[0.2cm]
+$WACC$ & Weighted Average Cost of Capital & \quad \% \\[0.2cm]
+$D/V$ & Debt-to-Value ratio & \quad - \\[0.2cm]
+$Overlap$ &  Market overlap coefficient & \quad - \\[0.2cm]
+$d_ij$ & Distance between cities i and j & \quad km 
 \end{tabular}
 \end{center}
 
