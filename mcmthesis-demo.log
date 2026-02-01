@@ -558,3 +558,613 @@ Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (d:/texlive/texlive/2025/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
+ (d:/texlive/texlive/2025/texmf-dist/tex/generic/kastrup/binhex.tex)
+\ntx@tmpcnta=\count337
+\ntx@cnt=\count338
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count339
+\l__fontspec_language_int=\count340
+\l__fontspec_strnum_int=\count341
+\l__fontspec_tmp_int=\count342
+\l__fontspec_tmpa_int=\count343
+\l__fontspec_tmpb_int=\count344
+\l__fontspec_tmpc_int=\count345
+\l__fontspec_em_int=\count346
+\l__fontspec_emdef_int=\count347
+\l__fontspec_strong_int=\count348
+\l__fontspec_strongdef_int=\count349
+\l__fontspec_tmpa_dim=\dimen258
+\l__fontspec_tmpb_dim=\dimen259
+\l__fontspec_tmpc_dim=\dimen260
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (d:/texlive/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+LaTeX Info: Redefining \oldstylenums on input line 611.
+LaTeX Info: Redefining \liningnums on input line 615.
+\tx@sixem=\dimen261
+\tx@y=\dimen262
+\tx@x=\dimen263
+\tx@tmpdima=\dimen264
+\tx@tmpdimb=\dimen265
+\tx@tmpdimc=\dimen266
+\tx@tmpdimd=\dimen267
+\tx@tmpdime=\dimen268
+\tx@tmpdimf=\dimen269
+\tx@dimA=\dimen270
+\tx@dimAA=\dimen271
+\tx@dimB=\dimen272
+\tx@dimBB=\dimen273
+\tx@dimC=\dimen274
+) (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count350
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count351
+\c@listtotal=\count352
+\c@listcount=\count353
+\c@liststart=\count354
+\c@liststop=\count355
+\c@citecount=\count356
+\c@citetotal=\count357
+\c@multicitecount=\count358
+\c@multicitetotal=\count359
+\c@instcount=\count360
+\c@maxnames=\count361
+\c@minnames=\count362
+\c@maxitems=\count363
+\c@minitems=\count364
+\c@citecounter=\count365
+\c@maxcitecounter=\count366
+\c@savedcitecounter=\count367
+\c@uniquelist=\count368
+\c@uniquename=\count369
+\c@refsection=\count370
+\c@refsegment=\count371
+\c@maxextratitle=\count372
+\c@maxextratitleyear=\count373
+\c@maxextraname=\count374
+\c@maxextradate=\count375
+\c@maxextraalpha=\count376
+\c@abbrvpenalty=\count377
+\c@highnamepenalty=\count378
+\c@lownamepenalty=\count379
+\c@maxparens=\count380
+\c@parenlevel=\count381
+\blx@tempcnta=\count382
+\blx@tempcntb=\count383
+\blx@tempcntc=\count384
+\c@blx@maxsection=\count385
+\blx@maxsegment@0=\count386
+\blx@notetype=\count387
+\blx@parenlevel@text=\count388
+\blx@parenlevel@foot=\count389
+\blx@sectionciteorder@0=\count390
+\blx@sectionciteorderinternal@0=\count391
+\blx@entrysetcounter=\count392
+\blx@biblioinstance=\count393
+\labelnumberwidth=\skip88
+\labelalphawidth=\skip89
+\biblabelsep=\skip90
+\bibitemsep=\skip91
+\bibnamesep=\skip92
+\bibinitsep=\skip93
+\bibparsep=\skip94
+\bibhang=\skip95
+\blx@bcfin=\read3
+\blx@bcfout=\write5
+\blx@langwohyphens=\language90
+\c@mincomprange=\count394
+\c@maxcomprange=\count395
+\c@mincompwidth=\count396
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count397
+\c@savedafterword=\count398
+\c@annotator=\count399
+\c@savedannotator=\count400
+\c@author=\count401
+\c@savedauthor=\count402
+\c@bookauthor=\count403
+\c@savedbookauthor=\count404
+\c@commentator=\count405
+\c@savedcommentator=\count406
+\c@editor=\count407
+\c@savededitor=\count408
+\c@editora=\count409
+\c@savededitora=\count410
+\c@editorb=\count411
+\c@savededitorb=\count412
+\c@editorc=\count413
+\c@savededitorc=\count414
+\c@foreword=\count415
+\c@savedforeword=\count416
+\c@holder=\count417
+\c@savedholder=\count418
+\c@introduction=\count419
+\c@savedintroduction=\count420
+\c@namea=\count421
+\c@savednamea=\count422
+\c@nameb=\count423
+\c@savednameb=\count424
+\c@namec=\count425
+\c@savednamec=\count426
+\c@translator=\count427
+\c@savedtranslator=\count428
+\c@shortauthor=\count429
+\c@savedshortauthor=\count430
+\c@shorteditor=\count431
+\c@savedshorteditor=\count432
+\c@labelname=\count433
+\c@savedlabelname=\count434
+\c@institution=\count435
+\c@savedinstitution=\count436
+\c@lista=\count437
+\c@savedlista=\count438
+\c@listb=\count439
+\c@savedlistb=\count440
+\c@listc=\count441
+\c@savedlistc=\count442
+\c@listd=\count443
+\c@savedlistd=\count444
+\c@liste=\count445
+\c@savedliste=\count446
+\c@listf=\count447
+\c@savedlistf=\count448
+\c@location=\count449
+\c@savedlocation=\count450
+\c@organization=\count451
+\c@savedorganization=\count452
+\c@origlocation=\count453
+\c@savedoriglocation=\count454
+\c@origpublisher=\count455
+\c@savedorigpublisher=\count456
+\c@publisher=\count457
+\c@savedpublisher=\count458
+\c@language=\count459
+\c@savedlanguage=\count460
+\c@origlanguage=\count461
+\c@savedoriglanguage=\count462
+\c@pageref=\count463
+\c@savedpageref=\count464
+\shorthandwidth=\skip96
+\shortjournalwidth=\skip97
+\shortserieswidth=\skip98
+\shorttitlewidth=\skip99
+\shortauthorwidth=\skip100
+\shorteditorwidth=\skip101
+\locallabelnumberwidth=\skip102
+\locallabelalphawidth=\skip103
+\localshorthandwidth=\skip104
+\localshortjournalwidth=\skip105
+\localshortserieswidth=\skip106
+\localshorttitlewidth=\skip107
+\localshortauthorwidth=\skip108
+\localshorteditorwidth=\skip109
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+File: blx-bibtex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back bibtex backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count465
+\c@textcitetotal=\count466
+\c@textcitemaxnames=\count467
+\c@biburlbigbreakpenalty=\count468
+\c@biburlbreakpenalty=\count469
+\c@biburlnumpenalty=\count470
+\c@biburlucpenalty=\count471
+\c@biburllcpenalty=\count472
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count473
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count474
+\c@bbx:relatedtotal=\count475
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2025-01-18 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)) (d:/texlive/texlive/2025/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip110
+\cftbeforetoctitleskip=\skip111
+\cftaftertoctitleskip=\skip112
+\cftbeforepartskip=\skip113
+\cftpartnumwidth=\skip114
+\cftpartindent=\skip115
+\cftbeforesecskip=\skip116
+\cftsecindent=\skip117
+\cftsecnumwidth=\skip118
+\cftbeforesubsecskip=\skip119
+\cftsubsecindent=\skip120
+\cftsubsecnumwidth=\skip121
+\cftbeforesubsubsecskip=\skip122
+\cftsubsubsecindent=\skip123
+\cftsubsubsecnumwidth=\skip124
+\cftbeforeparaskip=\skip125
+\cftparaindent=\skip126
+\cftparanumwidth=\skip127
+\cftbeforesubparaskip=\skip128
+\cftsubparaindent=\skip129
+\cftsubparanumwidth=\skip130
+\cftbeforeloftitleskip=\skip131
+\cftafterloftitleskip=\skip132
+\cftbeforefigskip=\skip133
+\cftfigindent=\skip134
+\cftfignumwidth=\skip135
+\c@lofdepth=\count476
+\c@lotdepth=\count477
+\cftbeforelottitleskip=\skip136
+\cftafterlottitleskip=\skip137
+\cftbeforetabskip=\skip138
+\cfttabindent=\skip139
+\cfttabnumwidth=\skip140
+) (d:/texlive/texlive/2025/texmf-dist/tex/latex/newtx/TeXGyreTermesX.fontspec)
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Regular scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Regular scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Regular scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Bold scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Bold scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Italic scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Italic scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Slanted scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-Slanted scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-BoldItalic scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-BoldItalic scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-BoldSlanted scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             TeXGyreTermesX-BoldSlanted scale = 1.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'TeXGyreTermesX(0)' created for font
+(fontspec)             'TeXGyreTermesX' with options [Ligatures = TeX,Scale =
+(fontspec)             1,Extension = .otf,SmallCapsFeatures={RawFeature =
+(fontspec)             +pcap},RawFeature=-ss05,Ligatures=TeX,Extension =
+(fontspec)             .otf,UprightFont = TeXGyreTermesX-Regular,BoldFont =
+(fontspec)             TeXGyreTermesX-Bold,ItalicFont =
+(fontspec)             TeXGyreTermesX-Italic,BoldItalicFont =
+(fontspec)             TeXGyreTermesX-BoldItalic,SlantedFont =
+(fontspec)             *-Slanted,BoldSlantedFont= *-BoldSlanted,Numbers =
+(fontspec)             {Monospaced,Lining}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 63.
+\@quotelevel=\count478
+\@quotereset=\count479
+
+No file mcmthesis-demo.aux.
+\openout1 = `mcmthesis-demo.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+\c@lstlisting=\count480
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 63.
+\@outlinefile=\write6
+\openout6 = `mcmthesis-demo.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 63.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 63.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 63.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 63.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 63.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 63.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 63.
+LaTeX Font Info:    Redeclaring math accent \check on input line 63.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 63.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 63.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 63.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 63.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 63.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/TeXGyreTermesX(0)/m/n on input line 63.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 63.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/TeXGyreTermesX(0)/m/n on input line 63.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/TeXGyreTermesX(0)/m/n --> TU/TeXGyreTermesX(0)/m/n on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/TeXGyreTermesX(0)/m/it on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/TeXGyreTermesX(0)/b/n on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 63.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/TeXGyreTermesX(0)/m/n --> TU/TeXGyreTermesX(0)/b/n on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/TeXGyreTermesX(0)/b/it on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 63.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(d:/texlive/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout5 = `mcmthesis-demo-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+
+
+Package biblatex Warning: File 'mcmthesis-demo.bbl' is wrong format version - expected 3.3.
+
+Package biblatex Info: ... file 'mcmthesis-demo.bbl' found.
+(./mcmthesis-demo.bbl)
+Package biblatex Info: Reference section=0 on input line 63.
+Package biblatex Info: Reference segment=0 on input line 63.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 85.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 24.88pt on input line 85.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 20.74pt on input line 85.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 85.
+
+
+[1
+
+]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 17.28pt on input line 89.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 17.28pt on input line 89.
+
+No file mcmthesis-demo.toc.
+\tf@toc=\write7
+\openout7 = `mcmthesis-demo.toc'.
+
+
+
+[2]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 97.
+
+
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 122.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 10.95pt on input line 122.
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 122.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3]
+
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 157.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at lea
