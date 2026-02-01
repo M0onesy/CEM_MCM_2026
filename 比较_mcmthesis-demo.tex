@@ -8,8 +8,6 @@
           titlepage = false,             % 美赛通常不需要单独的标题页
           abstract = true,
           }
-\setlength{\headheight}{14pt}
-\addtolength{\topmargin}{-2pt}
 
 % ==================== 常用宏包引入 ====================
 \usepackage{palatino}     % 使用 Palatino 字体，看起来比 Times 更现代、优雅
@@ -97,9 +95,9 @@ Heat transfer, Thermodynamic system, CFD, Energy conservation
 
 
 \subsection{Problem Background}
-Professional sports represent a unique intersection of athletic competition and business enterprise. The WNBA provides a particularly relevant setting for studying this trade-off due to its rapid growth in media exposure, increasing franchise valuations, and strict structural constraints such as salary caps and roster limits.
+Professional sports represent a unique intersection of athletic competition and business enterprise.While team success is traditionally measured by wins and championships, franchise owners ultimately seek to maximize long-term profit and franchise value. Player compensation, roster construction, and strategic investment decisions must therefore balance athletic contribution with economic return. These decisions are further constrained by league regulations such as salary caps, roster limits, and revenue-sharing policies, which limit purely performance-driven or profit-driven strategies.
 
-While the framework we develop is applicable across WNBA franchises, we focus on the Indiana Fever as a representative case study.The Fever offers a uniquely suitable analytical setting due to the concentration of commercial value in a single superstar player (Caitlin Clark), recent revenue expansion, and publicly observable performance and financial indicators.
+The WNBA provides a representative setting for studying this trade-off due to its recent growth in media exposure, fan engagement, and franchise valuation alongside continued structural and financial constraints. For teams such as the Las Vegas Aces, management must evaluate players based not only on statistical performance but also on market influence, risk exposure, and future potential. This environment necessitates the development of an integrated modeling framework that quantitatively links player performance, financial outcomes, and strategic decision-making under dynamic and uncertain conditions.
 
 \subsection{Problem Restatement}
 To address the objectives of this problem, we must construct an integrated analytical framework that supports strategic decision-making for a professional WNBA team. Specifically, we aim to:
@@ -135,7 +133,6 @@ To simplify the problem and make it convenient for us to simulate real-life cond
 \item {\bf Player performance can be represented by aggregated statistical indicators.}
 
 We assume that a player’s athletic contribution can be sufficiently captured by key performance metrics such as scoring efficiency, rebounds, assists, and defensive impact, which are publicly available and measurable.
-We further assume that Wins Above Replacement (WAR), derived from Box Plus/Minus (BPM), provides a valid and consistent proxy for marginal contribution to team wins.
 
 Aggregated statistics provide an objective and standardized representation of on-court contribution. These indicators are widely used in professional analytics and allow for quantitative comparison across players.
 
@@ -169,60 +166,60 @@ We assume that team management aims to maximize a weighted objective function th
 
 Although real-world decisions may include behavioral factors, modeling rational optimization allows us to derive systematic and interpretable strategies aligned with ownership objectives.
 
+\item {\bf External market conditions remain relatively stable within a single season.}
+
+We assume no extreme macroeconomic shocks occur during the modeled season.
+
+This assumption simplifies the dynamic model and isolates the impact of roster and strategic decisions from unpredictable macroeconomic disruptions.
 \end{itemize}
 
 \section{Notations}
 
-\begin{table}[h]
-\centering
-\caption{Notation Summary}
-\begin{tabular}{l l c}
-\toprule
-\textbf{Symbol} & \textbf{Description} & \textbf{Unit} \\
-\midrule
-$V_{total}$ & Total player value & USD \\
-$V_{perf}$ & Performance-based value & USD \\
-$V_{comm}$ & Commercial value & USD \\
-$\beta$ & Weight assigned to performance value & -- \\
-$WAR$ & Wins Above Replacement & wins \\
-$BPM$ & Box Plus/Minus & points/100 poss \\
-$VPW$ & Value Per Win & USD/win \\
-$R$ & Total revenue & USD \\
-$C$ & Total costs & USD \\
-$\pi$ & Operating profit & USD \\
-$Cap$ & Salary cap & USD \\
-$WACC$ & Weighted Average Cost of Capital & \% \\
-$D/V$ & Debt-to-Value ratio & -- \\
-$Overlap$ & Market overlap coefficient & -- \\
-$d_{ij}$ & Distance between cities $i$ and $j$ & km \\
-\bottomrule
+\begin{center}
+\begin{tabular}{clc}
+{\bf Symbols} & {\bf Description} & \quad {\bf Unit} \\[0.25cm]
+$V_{total}$ & Total player value & \quad USD \\[0.2cm]
+$V_{perf}$ & Performance-based value & \quad USD \\[0.2cm]
+$V_{comm}$ & Commercial value & \quad USD \\[0.2cm]
+$\alpha$ &Performance weight in objective function & \quad - \\[0.2cm]
+$WAR$ & Wins Above Replacement & \quad wins \\[0.2cm]
+$BPM$ & Box Plus/Minus & \quad points/100 poss \\[0.2cm]
+$VPW$ & Value Per Win & \quad USD/win \\[0.2cm]
+$R$ & Total revenue & \quad USD \\[0.2cm]
+$C$ &Total costs & \quad USD\\[0.2cm]
+$\pi$ & Operating profit & \quad USD \\[0.2cm]
+$Cap$ & Salary cap & \quad USD \\[0.2cm]
+$WACC$ & Weighted Average Cost of Capital & \quad \% \\[0.2cm]
+$D/V$ & Debt-to-Value ratio & \quad - \\[0.2cm]
+$Overlap$ &  Market overlap coefficient & \quad - \\[0.2cm]
+$d_{ij}$ & Distance between cities i and j & \quad km 
 \end{tabular}
-\end{table}
+\end{center}
 
-%\noindent where we define the main parameters while specific value of those parameters will be given later.
+\noindent where we define the main parameters while specific value of those parameters will be given later.
 
 \section{Model Overview}
 
-The overall framework consists of four interconnected modules:
+%In our basic model, we aim at three goals: keeping the temperature as even as possible, making it close to the initial temperature and decreasing the water consumption.
 
-(1) a dual-dimension player valuation model integrating performance and commercial impact; 
+%We start with the simple sub-model where hot water is added constantly.
+%t first we introduce convection heat transfer control equations in rectangular coordinate system. Then we define the mean temperature of bath water.
+%
+%fterwards, we introduce Newton cooling formula to determine heat transfer
+%capacity. After deriving the value of parameters, we get calculating results via formula deduction and simulating results via CFD.
 
-(2) a financial forecasting and capital structure model linking roster composition to profitability; 
+%Secondly, we present the complicated sub-model in which hot water is
+%added discontinuously. We define an iteration consisting of two process:
 
-(3) a mixed-integer roster optimization program under salary cap constraints; 
-
-(4) a trigger-based dynamic decision engine that adjusts strategies in response to injuries, performance thresholds, and structural shocks. 
-
-These modules operate iteratively across the season.
-
-%\begin{figure}[h] 
-%\centering
-%\includegraphics[width=12cm]{fig1.jpg}
-%\caption{Modeling process} \label{fig1}
-%\end{figure}
+\begin{figure}[h] 
+\centering
+\includegraphics[width=12cm]{fig1.jpg}
+\caption{Modeling process} \label{fig1}
+\end{figure}
 
 \section{Dynamic Decision-Making Model}
 
+%We first establish the sub-model based on the condition that a person add water continuously to reheat the bathing water. Then we use Computational Fluid Dynamics (CFD) to simulate the change of water temperature in the bathtub. At last, we evaluate the model with the criteria which have been defined before.
 we construct a dynamic decision-making model that integrates basketball operations and financial management within a unified and adaptive structure.
 We formulate team management as a multi-period optimization problem in which ownership seeks to balance competitive success and financial sustainability. The model incorporates performance dynamics, revenue fluctuations, and structural constraints to support rational adjustment of roster and investment strategies over time.
 
@@ -880,12 +877,12 @@ In addition, your report must include a letter to the Chief Financial Officer (C
 Here are simulation programmes we used in our model as follow.\\
 
 \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
-% \lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+\lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
 
 \section{Second appendix}
 
 some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
-% \lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
+\lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
 
 \end{appendices}
 
