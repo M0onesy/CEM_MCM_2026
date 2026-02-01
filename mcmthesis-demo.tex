@@ -64,20 +64,26 @@
 
 \begin{abstract}
 
-A traditional bathtub cannot be reheated by itself, so users have to add hot water from time to time. Our goal is to establish a model of the temperature of bath water in space and time. Then we are expected to propose an optimal strategy for users to keep the temperature even and close to initial temperature and decrease water consumption.
+Professional sports franchises operate at the intersection of competitive ambition and financial sustainability. This study develops an integrated decision-support framework for WNBA teams, using the Indiana Fever as a representative case. The Fever provides a unique analytical setting due to rapid revenue growth, strong superstar concentration, and binding league constraints such as salary caps and roster limits.
 
-To simplify modeling process, we firstly assume there is no person in the bathtub. We regard the whole bathtub as a thermodynamic system and introduce heat transfer formulas.
+We construct a unified multi-module modeling system that simultaneously addresses player valuation, financial forecasting, roster optimization, capital structure decisions, and risk management under uncertainty.
 
-We establish two sub-models: adding water constantly and discontinuously. As for the former sub-model, we define the mean temperature of bath water. Introducing Newton cooling formula, we determine the heat transfer capacity. After deriving the value of parameters, we deduce formulas to derive results and simulate the change of temperature field via CFD. As for the second sub-model, we define an iteration consisting of two process: heating and standby. According to energy conservation law, we obtain the relationship of time and total heat dissipating capacity. Then we determine the mass flow and the time of adding hot water. We also use CFD to simulate the temperature field in second sub-model.
+First, we establish a {\bf dual-dimension player valuation model} that decomposes total player value into performance-based value (derived from Wins Above Replacement and Value per Win) and commercial value (allocated using a market influence index). This formulation enables quantitative comparison between high-efficiency contributors and high-visibility superstars.
 
-In consideration of evaporation, we correct the results of sub-models referring to some scientists' studies. We define two evaluation criteria and compare the two sub-models. Adding water constantly is found to keep the temperature of bath water even and avoid wasting too much water, so it is recommended by us.
+Second, we build a {\bf financial forecasting} model that links roster composition to revenue streams including ticket sales, sponsorship, broadcasting, and merchandise. A dynamic ticket pricing module adjusts prices across games based on opponent strength, star availability, and scheduling effects, subject to capacity constraints.
 
-Then we determine the influence of some factors: radiation heat transfer, the shape and volume of the tub, the shape/volume/temperature/motions of the person, the bubbles made from bubble bath additives. We focus on the influence of those factors to heat transfer and then conduct sensitivity analysis. The results indicate smaller bathtub with less surface area, lighter personal mass, less motions and more bubbles will decrease heat transfer and save water.
+Third, roster construction is formulated as a {\bf mixed-integer optimization problem} under salary cap and positional constraints. Core players are locked into the optimization framework to preserve franchise stability, while acquisition strategies prioritize interior defense reinforcement, backcourt depth, and draft capital efficiency.
 
-Based on our model analysis and conclusions, we propose the optimal strategy for the user in a bathtub and explain the reason of uneven temperature throughout the bathtub. In addition, we make improvement for applying our model in real life.
+Fourth, we design a {\bf trigger-based dynamic decision} engine that updates strategic parameters in response to performance fluctuations, revenue shifts, injury events, and structural changes such as league expansion. The unified objective function balances operating profit and competitive success through a preference parameter reflecting ownership priorities.
 
+We further evaluate {\bf league expansion impact} using a geographic market overlap model with distance decay effects. A probabilistic injury management module estimates expected games missed and activates tiered response protocols, including workload optimization and insurance hedging decisions.
+
+Sensitivity analysis indicates that profitability is most sensitive to star availability and attendance rate, while core strategic recommendations remain robust under realistic perturbations.
+
+Overall, the proposed system transforms team governance from isolated operational decisions into a coherent, adaptive optimization architecture. The framework supports roster construction, financial policy alignment, and long-term franchise valuation under uncertainty, and can be extended to other professional sports contexts.
 \begin{keywords}
-Heat transfer, Thermodynamic system, CFD, Energy conservation
+\bf Sports Economics; Player Valuation; Multi-Objective Optimization; 
+Salary Cap Constraints; Dynamic Pricing; Risk Management
 \end{keywords}
 
 \end{abstract}
@@ -844,28 +850,43 @@ Finally, long-term projections of player development and injury risk are probabi
 
 Overall, while the model provides a structured and quantitatively grounded decision-support system, practical implementation should combine analytical outputs with managerial judgment and updated real-time data.
 
+\newpage
 
-\begin{letter}{Dear XXX:}
+\begin{center}
+\section*{Summary Letter to the Team Management}
+\end{center}
 
-From simulation results of real-life situations, we find it takes a period of time for the inflow hot water to spread throughout the bathtub. During this process, the bath water continues transferring heat into air, bathtub and the person in bathtub. The difference between heat transfer capacity makes the temperature of various areas to be different. So that it is difficult to get an evenly maintained temperature throughout the bath water.
+\noindent Dear Team Management,
 
-In order to enjoy a comfortable bath with even temperature of bath water and without wasting too much water, we propose the following suggestions.
+\vspace{0.3cm}
+
+Thank you for the opportunity to evaluate your organization’s strategic position within the evolving WNBA environment. We developed an integrated analytical framework that balances competitive success with long-term financial sustainability.
+
+Professional sports organizations operate at the intersection of athletic achievement and economic return. To address this trade-off, we constructed a unified decision-making system linking player performance evaluation, commercial impact modeling, financial forecasting, roster optimization, and risk management within a dynamic structure.
+
+Our analysis yields several key insights.
+
+First, player value should be evaluated as a dual construct. On-court contribution, measured through indicators such as WAR and BPM, together with commercial influence determines total player value. While superstar effects significantly enhance revenue generation, they also introduce concentration risk that requires structured mitigation.
+
+Second, financial sustainability depends on coordinated roster construction and capital allocation. By embedding salary cap constraints and revenue forecasting into a mixed-integer optimization framework, we identify roster configurations that balance win maximization and operating profit. Disciplined investment efficiency generates stronger long-term franchise value than aggressive short-term expenditure.
+
+Third, risk management is essential under uncertainty. Injury probability, aging dynamics, and market shifts materially influence projected outcomes. Our dynamic decision engine monitors key indicators and adjusts strategic parameters when thresholds are exceeded, thereby improving resilience across competitive and economic scenarios.
+
+Sensitivity analysis indicates profitability is most responsive to star availability, attendance rates, and sponsor retention. Proactive load management, diversified revenue streams, and structured insurance coverage reduce downside exposure while preserving upside potential.
+
+In summary, our framework provides a comprehensive and implementable decision-support system that:
 
 \begin{itemize}
-\item Adding hot water consistently
-\item Using smaller bathtub if possible
-\item Decreasing motions during bath
-\item Using bubble bath additives
-\item Arranging more faucets of inflow
+    \item Quantifies total player value in economic terms;
+    \item Optimizes roster construction under league constraints;
+    \item Integrates financial forecasting with competitive strategy;
+    \item Dynamically adapts to uncertainty and structural change.
 \end{itemize}
 
-\vspace{\parskip}
+\vspace{0.3cm}
 
-Sincerely yours,
-
-Your friends
-
-\end{letter}
+\noindent Respectfully,\\
+Your Consulting Team
 
 \newpage
 
