@@ -66,17 +66,6 @@
 
 \begin{abstract}
 
-Professional sports franchises operate at the intersection of competitive ambition and financial sustainability. This study develops an integrated decision-support framework for WNBA teams, using the Indiana Fever as a representative case. The Fever provides a unique analytical setting due to rapid revenue growth, strong superstar concentration, and binding league constraints such as salary caps and roster limits.
-
-We construct a unified multi-module modeling system that simultaneously addresses player valuation, financial forecasting, roster optimization, capital structure decisions, and risk management under uncertainty.
-
-First, we establish a {\bf dual-dimension player valuation model} that decomposes total player value into performance-based value (derived from Wins Above Replacement and Value per Win) and commercial value (allocated using a market influence index). This formulation enables quantitative comparison between high-efficiency contributors and high-visibility superstars.
-
-Second, we build a {\bf financial forecasting} model that links roster composition to revenue streams including ticket sales, sponsorship, broadcasting, and merchandise. A dynamic ticket pricing module adjusts prices across games based on opponent strength, star availability, and scheduling effects, subject to capacity constraints.
-
-Third, roster construction is formulated as a {\bf mixed-integer optimization problem} under salary cap and positional constraints. Core players are locked into the optimization framework to preserve franchise stability, while acquisition strategies prioritize interior defense reinforcement, backcourt depth, and draft capital efficiency.
-
-Fourth, we design a {\bf trigger-based dynamic decision} engine that updates strategic parameters in response to performance fluctuations, revenue shifts, injury events, and structural changes such as league expansion. The unified objective function balances operating profit and competitive success through a preference parameter reflecting ownership priorities.
 Professional sports teams face a fundamental tension: maximizing on-court performance while ensuring financial profitability. This paper develops an integrated Decision Support System (DSS) for the Indiana Fever, a WNBA franchise experiencing unprecedented growth due to the ``Caitlin Clark effect.'' Our framework addresses the dual mandate of competitive success and business sustainability through a suite of interconnected mathematical models.
 
 We present a \textbf{Dual-Track Management Framework} that simultaneously optimizes business operations and basketball operations. The core innovation is a weighted objective function $V = \alpha \cdot \text{Profit} + (1-\alpha) \cdot \text{Wins}$, where $\alpha = 0.55$ reflects the current strategic priority of financial stability while maintaining competitive integrity.
@@ -95,11 +84,6 @@ For player acquisition, roster optimization through \textbf{mixed-integer linear
 
 Key recommendations include implementing a 32-minute cap on Clark's playing time, securing key player injury insurance (\$18M coverage), and locking in sponsor agreements before potential nearby expansion.
 
-We further evaluate {\bf league expansion impact} using a geographic market overlap model with distance decay effects. A probabilistic injury management module estimates expected games missed and activates tiered response protocols, including workload optimization and insurance hedging decisions.
-
-Sensitivity analysis indicates that profitability is most sensitive to star availability and attendance rate, while core strategic recommendations remain robust under realistic perturbations.
-
-Overall, the proposed system transforms team governance from isolated operational decisions into a coherent, adaptive optimization architecture. The framework supports roster construction, financial policy alignment, and long-term franchise valuation under uncertainty, and can be extended to other professional sports contexts.
 \begin{keywords}
 Sports Analytics; WNBA; Dynamic Decision Making; Player Valuation; Capital Structure Optimization; Geographic Competition; Mixed-Integer Programming; Monte Carlo Simulation
 \end{keywords}
@@ -1446,51 +1430,7 @@ All strategic recommendations remain robust across reasonable parameter ranges.
 
 \textbf{Fifth, Actionable Outputs.} Each model component produces specific, implementable recommendations with quantified expected impacts.
 
-\subsection{Limitations}
-
-Despite its strengths, the model relies on several simplifying assumptions. Player performance is represented through aggregated statistics, which may not fully capture qualitative factors such as leadership, locker-room chemistry, or defensive communication. Similarly, commercial value is estimated through proxy indicators rather than direct revenue attribution, potentially introducing estimation bias.
-
-The financial forecasting component assumes relatively stable macroeconomic conditions within a season. Unexpected shocks—such as labor disputes, sudden regulatory changes, or economic downturns—may alter revenue streams beyond the model’s predictive scope.
-
-In addition, the geographic competition model simplifies market behavior through distance-based decay, without incorporating detailed media market segmentation or cross-sport competition effects. Real-world fan loyalty and sponsorship allocation may exhibit nonlinear dynamics not fully captured here.
-
-Finally, long-term projections of player development and injury risk are probabilistic and subject to uncertainty. Although risk-adjusted mechanisms are embedded in the framework, forecasting error inevitably increases over extended horizons.
-
-Overall, while the model provides a structured and quantitatively grounded decision-support system, practical implementation should combine analytical outputs with managerial judgment and updated real-time data.
-
-\newpage
-
-\begin{center}
-\section*{Summary Letter to the Team Management}
-\end{center}
-
-\noindent Dear Team Management,
-
-\vspace{0.3cm}
-
-Thank you for the opportunity to evaluate your organization’s strategic position within the evolving WNBA environment. We developed an integrated analytical framework that balances competitive success with long-term financial sustainability.
-
-Professional sports organizations operate at the intersection of athletic achievement and economic return. To address this trade-off, we constructed a unified decision-making system linking player performance evaluation, commercial impact modeling, financial forecasting, roster optimization, and risk management within a dynamic structure.
-
-Our analysis yields several key insights.
-
-First, player value should be evaluated as a dual construct. On-court contribution, measured through indicators such as WAR and BPM, together with commercial influence determines total player value. While superstar effects significantly enhance revenue generation, they also introduce concentration risk that requires structured mitigation.
-
-Second, financial sustainability depends on coordinated roster construction and capital allocation. By embedding salary cap constraints and revenue forecasting into a mixed-integer optimization framework, we identify roster configurations that balance win maximization and operating profit. Disciplined investment efficiency generates stronger long-term franchise value than aggressive short-term expenditure.
-
-Third, risk management is essential under uncertainty. Injury probability, aging dynamics, and market shifts materially influence projected outcomes. Our dynamic decision engine monitors key indicators and adjusts strategic parameters when thresholds are exceeded, thereby improving resilience across competitive and economic scenarios.
-
-Sensitivity analysis indicates profitability is most responsive to star availability, attendance rates, and sponsor retention. Proactive load management, diversified revenue streams, and structured insurance coverage reduce downside exposure while preserving upside potential.
-
-In summary, our framework provides a comprehensive and implementable decision-support system that:
-
-\begin{itemize}
-    \item Quantifies total player value in economic terms;
-    \item Optimizes roster construction under league constraints;
-    \item Integrates financial forecasting with competitive strategy;
-    \item Dynamically adapts to uncertainty and structural change.
 \subsection{Model Limitations}
-\end{itemize}
 
 \textbf{First, Data Constraints.}
 \begin{itemize}
@@ -1511,12 +1451,6 @@ In summary, our framework provides a comprehensive and implementable decision-su
 \item Macroeconomic conditions
 \item Competitor marketing strategies
 \item Regulatory changes beyond CBA
-\end{itemize}
-
-\textbf{Fourth, Star Concentration Risk.}
-\begin{itemize}
-\item Heavy dependence on Clark-specific parameters
-\item Limited applicability to teams without comparable stars
 \end{itemize}
 
 \subsection{Model Extensions}
@@ -1543,18 +1477,31 @@ The core structure---dual-track optimization, trigger-based decisions, Monte Car
 
 
 \newpage  % 信件
-\begin{letter}{Dear XXX:}
+\begin{letter}{Dear Team Management,}
 
-From simulation results of real-life situations, we find it takes a period of time for the inflow hot water to spread throughout the bathtub. During this process, the bath water continues transferring heat into air, bathtub and the person in bathtub. The difference between heat transfer capacity makes the temperature of various areas to be different. So that it is difficult to get an evenly maintained temperature throughout the bath water.
+\vspace{0.3cm}
 
-In order to enjoy a comfortable bath with even temperature of bath water and without wasting too much water, we propose the following suggestions.
+Thank you for the opportunity to evaluate your organization’s strategic position within the evolving WNBA environment. We developed an integrated analytical framework that balances competitive success with long-term financial sustainability.
+
+Professional sports organizations operate at the intersection of athletic achievement and economic return. To address this trade-off, we constructed a unified decision-making system linking player performance evaluation, commercial impact modeling, financial forecasting, roster optimization, and risk management within a dynamic structure.
+
+Our analysis yields several key insights.
+
+First, player value should be evaluated as a dual construct. On-court contribution, measured through indicators such as WAR and BPM, together with commercial influence determines total player value. While superstar effects significantly enhance revenue generation, they also introduce concentration risk that requires structured mitigation.
+
+Second, financial sustainability depends on coordinated roster construction and capital allocation. By embedding salary cap constraints and revenue forecasting into a mixed-integer optimization framework, we identify roster configurations that balance win maximization and operating profit. Disciplined investment efficiency generates stronger long-term franchise value than aggressive short-term expenditure.
+
+Third, risk management is essential under uncertainty. Injury probability, aging dynamics, and market shifts materially influence projected outcomes. Our dynamic decision engine monitors key indicators and adjusts strategic parameters when thresholds are exceeded, thereby improving resilience across competitive and economic scenarios.
+
+Sensitivity analysis indicates profitability is most responsive to star availability, attendance rates, and sponsor retention. Proactive load management, diversified revenue streams, and structured insurance coverage reduce downside exposure while preserving upside potential.
+
+In summary, our framework provides a comprehensive and implementable decision-support system that:
 
 \begin{itemize}
-\item Adding hot water consistently
-\item Using smaller bathtub if possible
-\item Decreasing motions during bath
-\item Using bubble bath additives
-\item Arranging more faucets of inflow
+    \item Quantifies total player value in economic terms;
+    \item Optimizes roster construction under league constraints;
+    \item Integrates financial forecasting with competitive strategy;
+    \item Dynamically adapts to uncertainty and structural change.
 \end{itemize}
 
 \vspace{0.3cm}
@@ -1566,7 +1513,7 @@ Your Consulting Team
 
 \newpage
 
-\begin{appendices}
+\begin{appendices}   %代码附注
 
 \section{First appendix}
 
