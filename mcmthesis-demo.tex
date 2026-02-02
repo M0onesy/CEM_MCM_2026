@@ -27,8 +27,14 @@
 \usepackage{newtxtext}    % \usepackage{palatino}
 \usepackage[backend=bibtex]{biblatex}   % for RStudio Complie
 \usepackage{tocloft}
+\usepackage[skip=3pt]{caption} % 缩小标题与下方表格的距离
 
 % ==================== 代码块设置 ====================
+\geometry{
+    bottom=2.0cm,  % 减小底部边距（默认通常是3-4cm）
+    % top=2.5cm,   % 如需要也可调整顶部
+}
+
 % 针对 Python/C++ 优化的代码样式
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -157,6 +163,12 @@ The problem contains several interconnected components that require structured m
 \end{table}
 
 These models feed into an Integrated Decision Support System (DSS) comprising seven interconnected components:
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=13.4cm]{./figures/flowchart.png}
+\caption{Flowchart} \label{fig1}
+\end{figure}
 
 \begin{itemize}
 \item \textbf{Model A: Dual-Dimension Player Value Model} --- Quantifies both on-court performance and commercial contributions
@@ -327,6 +339,12 @@ Lexie Hull & 0.5 & 0.15 & 0.10 & 0.13 & 1.5:1 \\
 
 \textbf{Key Insight:} Caitlin Clark's commercial value exceeds her (already elite) performance value by a factor of 11.3:1, validating treating her as a franchise asset whose value extends far beyond basketball statistics.
 
+\begin{figure}[H] 
+\centering
+\includegraphics[width=13.5cm]{./figures/01_player_value_decomposition.png}
+\caption{Flowchart} \label{fig2}
+\end{figure}
+
 \subsection{Model B: Financial Forecasting Model}
 
 The financial model decomposes team economics into revenue and cost components.
@@ -464,6 +482,12 @@ r_d = r_{\text{base}} + 0.02 \times \left(\frac{D/V}{0.30}\right)^2
 
 Given CBA uncertainty, we recommend a conservative 20-25\% target with emphasis on revolving credit facilities.
 
+\begin{figure}[H] 
+\centering
+\includegraphics[width=13.5cm]{./figures/05_wacc_optimization.png}
+\caption{Wacc Optimization} \label{fig1}
+\end{figure}
+
 \subsection{Implementation Timeline}
 
 \textbf{Immediate Actions (Pre-2025 Season):} Finalize dynamic pricing system; sign veteran rim protector; execute sponsor renewals with 3-year terms; purchase key player injury insurance (\$18M); establish \$50M revolving credit facility.
@@ -517,7 +541,11 @@ f(\text{age}) = \begin{cases}
 \subsubsection{Injury Risk Adjustment}
 
 \begin{equation}
-r_{\text{injury}}(\text{age}, \text{history}, \text{MPG}) = 1 - \left[0.05 + 0.01 \times \max(0, \text{age}-28) + 0.03 \times N_{\text{injuries}} + 0.01 \times \max(0, \text{MPG}-32)\right]
+\begin{split}
+r_{\text{injury}}(\text{age}, \text{history}, \text{MPG}) = 1 - \big[ & 0.05 + 0.01 \times \max(0, \text{age}-28) \\
+& + 0.03 \times N_{\text{injuries}} \\
+& + 0.01 \times \max(0, \text{MPG}-32) \big]
+\end{split}
 \end{equation}
 
 \subsubsection{Contract NPV Calculation}
@@ -646,6 +674,12 @@ Denver & 1,029 & 2.9 & 0.076 & $-0.6\%$ & Potential \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=16cm]{./figures/08_geographic_competition.png}
+\caption{Geographic Competition} \label{fig1}
+\end{figure}
 
 \subsection{Strategic Response Recommendations}
 
@@ -877,6 +911,12 @@ TV Revenue (Local) & $-\$1.2M$ & $+\$1.5M$ & \$2.7M \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[H] 
+\centering
+\includegraphics[width=15cm]{./figures/12_sensitivity_tornado.png}
+\caption{Sensitivity Tornado} \label{fig7}
+\end{figure}
+
 \textbf{Key Finding:} Clark availability dominates all other factors, with asymmetric impact (downside $>>$ upside). The \$20.5M swing represents $\sim$64\% of expected profit.
 
 \subsection{Monte Carlo Simulation}
@@ -888,20 +928,11 @@ We conduct $n = 10,000$ iterations:
 
 where each component is drawn from calibrated distributions with Clark injury shock (Bernoulli(0.07) with conditional loss $\sim U[\$5M, \$15M]$).
 
-\begin{table}[H]
+\begin{figure}[H] 
 \centering
-\caption{Monte Carlo Simulation Summary Statistics}
-\begin{tabular}{lclc}
-\toprule
-\textbf{Statistic} & \textbf{Value} & \textbf{Statistic} & \textbf{Value} \\
-\midrule
-Mean Profit & \$32.2M & 5th Percentile & \$20.1M \\
-Median Profit & \$33.8M & 95th Percentile & \$43.2M \\
-Standard Deviation & \$6.9M & Value at Risk (95\%) & \$20.1M \\
-Coefficient of Variation & 0.214 & Probability of Loss & $<1\%$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=16cm]{./figures/07_monte_carlo_distribution.png}
+\caption{Flowchart} \label{fig4}
+\end{figure}
 
 \subsection{Scenario Analysis}
 
@@ -1028,42 +1059,30 @@ Strategic Advisory Group
 \newpage
 
 \begin{appendices}
-
-\section{Data Sources and Key Parameters}
-
+\vspace{-0.7cm} % 向上移动 0.5 厘米
+\section{Additional chart information}
 \subsection{Data Sources}
-\begin{table}[H]
+\begin{figure}[H] 
 \centering
-\small
-\begin{tabular}{ll}
-\toprule
-\textbf{Data Type} & \textbf{Source} \\
-\midrule
-Player Statistics & Basketball-Reference, Her Hoop Stats \\
-Salary Data & Spotrac, WNBA Official \\
-Team Valuations & Sportico, Forbes \\
-Attendance Data & ESPN, WNBA Official \\
-TV Ratings & Nielsen, Sports Media Watch \\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=10cm]{./figures/04_age_performance_curve.png}
+\caption{Age Performance Curve} \label{fig1}
+\end{figure}
 
+\vspace{-0.6cm} % 向上移动 0.5 厘米
 \subsection{Model Parameters}
-\begin{table}[H]
+\begin{figure}[H] 
 \centering
-\small
-\begin{tabular}{lll}
-\toprule
-\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
-\midrule
-$\alpha$ & 0.55 & Profit-win trade-off weight \\
-$\gamma$ & 0.003 & Distance decay coefficient \\
-Salary Cap & \$1.4M & 2024 WNBA team cap \\
-Base Injury Rate & 5\% & Annual star player injury probability \\
-Demand Elasticity & 100 & Tickets per \$1 price change \\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=14cm]{./figures/09_injury_impact.png}
+\caption{Injury Impact} \label{fig1}
+\end{figure}
+
+\vspace{-0.6cm} % 向上移动 0.5 厘米
+\subsection{Model Parameters}
+\begin{figure}[H] 
+\centering
+\includegraphics[width=10.5cm]{./figures/11_player_war_projection.png}
+\caption{Player War Projection} \label{fig1}
+\end{figure}
 
 \end{appendices}
 

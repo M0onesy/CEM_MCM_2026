@@ -22,7 +22,7 @@ plt.rcParams['axes.facecolor'] = 'white'
 plt.rcParams['axes.grid'] = False
 
 # Create output directory
-output_dir = '/home/claude/charts'
+output_dir = './charts'
 os.makedirs(output_dir, exist_ok=True)
 
 # Color palette
@@ -635,7 +635,8 @@ def chart_09_injury_impact():
     threshold = 32  # Minutes threshold
     injury_prob = np.where(minutes <= threshold,
                            base_risk + 0.05 * (minutes - 25),
-                           base_risk + 0.05 * (threshold - 25) + 0.8 * (minutes - threshold) ** 1.5)
+                           # 确保括号内最小为 0，避免负数出现
+                           base_risk + 0.05 * (threshold - 25) + 0.8 * np.maximum(0, minutes - threshold) ** 1.5)
 
     ax2.plot(minutes, injury_prob, 'r-', linewidth=3, label='Injury Probability')
 
