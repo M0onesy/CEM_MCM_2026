@@ -105,19 +105,19 @@ Sports Analytics; WNBA; Dynamic Decision Making; Player Valuation; Capital Struc
 \subsection{Problem Background}    %ych-同意
 Professional sports represent a unique intersection of athletic competition and business enterprise. The WNBA provides a particularly relevant setting for studying this trade-off due to its rapid growth in media exposure, increasing franchise valuations, and strict structural constraints such as salary caps and roster limits.
 
-While the framework we develop is applicable across WNBA franchises, we focus on the Indiana Fever as a representative case study.The Fever offers a uniquely suitable analytical setting due to the concentration of commercial value in a single superstar player (Caitlin Clark), recent revenue expansion, and publicly observable performance and financial indicators.
+While the framework we develop is applicable across WNBA franchises, we focus on the Indiana Fever as a representative case study.The Fever offers a uniquely suitable analytical setting due to the concentration of commercial value in a single superstar player， Caitlin Clark, recent revenue expansion, and publicly observable performance and financial indicators.
 
 \subsection{Team Selection: Indiana Fever}   %题目没明确问题，不要问题重述！替换为队伍选择依据
 
-We select the Indiana Fever as our primary case study for several compelling reasons that align with the problem's core themes:
+We select the Indiana Fever as our primary case study for several compelling reasons:
 
 \textbf{First,} the team exemplifies the performance-versus-profit tension at its most acute. Rookie Caitlin Clark generated commercial value estimated at 8-10 times her statistical contribution to wins, creating a unique optimization landscape where traditional basketball metrics undervalue the player's true organizational worth.
 
-\textbf{Second,} the Fever represents a small-market franchise (Indianapolis MSA population: 2.1 million) that suddenly commands national attention, creating strategic challenges around market defense, pricing optimization, and sustainable growth that differ fundamentally from large-market teams.
+\textbf{Second,} Because of the Indianapolis MSA population (2.1 million), the Fever represents a small-market franchise.But it suddenly commands national attention, creating strategic challenges around market defense, pricing optimization, and sustainable growth that differ fundamentally from large-market teams.
 
-\textbf{Third,} the team's 2024 transformation---from a losing record to playoff contention accompanied by approximately 300\% revenue growth---provides rich, recent data for model calibration and validation.
+\textbf{Third,} the team's 2024 transformation---from a losing record to playoff contention accompanied by approximately 300\% revenue growth, provides rich, recent data for model calibration and validation.
 
-\textbf{Fourth,} the WNBA's ongoing structural changes (expansion, CBA negotiations, new media deals) make this an ideal context to demonstrate dynamic decision-making under uncertainty.
+\textbf{Fourth,} the WNBA's ongoing structural changes such as expansion, CBA negotiations, new media deals.etc make this an ideal context to demonstrate dynamic decision-making under uncertainty.
 
 \begin{table}[H]
 \centering
@@ -140,8 +140,7 @@ Playoff Result & First Round Exit & -- & Room for improvement \\
 
 The problem contains several interconnected components that require structured modeling.
 
-\textbf{First, player evaluation must extend beyond traditional performance statistics.} Athletic con-
-tribution influences team wins, while popularity and market appeal affect revenue streams such
+\textbf{First, player evaluation must extend beyond traditional performance statistics.} Athletic contribution influences team wins, while popularity and market appeal affect revenue streams such
 as ticket sales, merchandise, and media exposure. Therefore, player value should be modeled
 as a multi-dimensional construct combining competitive and commercial factors.
 
@@ -195,41 +194,38 @@ The unified framework balances competitive and financial objectives through a we
 
 We make the following assumptions to enable tractable modeling while maintaining practical relevance:
 
-\textbf{Performance Measurement:}
-\begin{enumerate}
-\item Player performance metrics (BPM, WAR) accurately capture on-court value contribution, as validated by extensive sports analytics literature.
-\item Wins Above Replacement (WAR) can be converted to monetary value using a Value Per Win (VPW) coefficient estimated from marginal revenue analysis.
-\end{enumerate}
+\begin{itemize}
+\item \textbf{Performance Measurement:}
 
-\textbf{Commercial Value:}
-\begin{enumerate}
-\setcounter{enumi}{2}
-\item Social media followers, jersey sales rankings, and TV rating impacts serve as valid proxies for commercial value attribution.
-\item The ``Caitlin Clark effect'' on attendance and viewership will persist with gradual normalization over 3-5 years as the novelty premium diminishes.
-\end{enumerate}
+Player performance metrics (BPM, WAR) accurately capture on-court value contribution, as validated by extensive sports analytics literature.
+Wins Above Replacement (WAR) can be converted to monetary value using a Value Per Win (VPW) coefficient estimated from marginal revenue analysis.
 
-\textbf{Market Dynamics:}
-\begin{enumerate}
-\setcounter{enumi}{4}
-\item Market population within a 150-mile radius constitutes the primary fan base for attendance revenue.
-\item Fan demand follows a linear price-quantity relationship within the relevant price range (\$50-\$200).
-\item Geographic competition intensity decays exponentially with distance between franchise locations.
-\end{enumerate}
 
-\textbf{League Structure:}
-\begin{enumerate}
-\setcounter{enumi}{7}
-\item The WNBA salary cap structure (\$1.4M team cap, \$252K maximum individual salary) remains stable for the 2025 season.
-\item League revenue sharing and national media contracts are distributed approximately equally among franchises.
-\item Expansion teams require 2-3 years to become competitive, limiting immediate competitive impact on incumbent teams.
-\end{enumerate}
+\item \textbf{Commercial Value:}
 
-\textbf{Risk Factors:}
-\begin{enumerate}
-\setcounter{enumi}{11}
-\item Player injury probability increases with age, accumulated minutes played, and injury history.
-\item New collective bargaining agreement (CBA) negotiations may significantly alter salary structures post-2025, creating structural uncertainty.
-\end{enumerate}
+Social media followers, jersey sales rankings, and TV rating impacts serve as valid proxies for commercial value attribution.
+The ``Caitlin Clark effect'' on attendance and viewership will persist with gradual normalization over 3-5 years as the novelty premium diminishes.
+
+
+\item \textbf{Market Dynamics:}
+
+Market population within a 150-mile radius constitutes the primary fan base for attendance revenue.
+Fan demand follows a linear price-quantity relationship within the relevant price range (\$50-\$200).
+Geographic competition intensity decays exponentially with distance between franchise locations.
+
+
+\item \textbf{League Structure:}
+
+The WNBA salary cap structure (\$1.4M team cap, \$252K maximum individual salary) remains stable for the 2025 season.
+ League revenue sharing and national media contracts are distributed approximately equally among franchises.
+ Expansion teams require 2-3 years to become competitive, limiting immediate competitive impact on incumbent teams.
+
+
+\item \textbf{Risk Factors:}
+
+ Player injury probability increases with age, accumulated minutes played, and injury history.
+ New collective bargaining agreement (CBA) negotiations may significantly alter salary structures post-2025, creating structural uncertainty.
+
 
 \section{Notations}    %YCH-增加了内容及分类
 
