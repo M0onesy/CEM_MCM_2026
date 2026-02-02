@@ -8,7 +8,7 @@
           titlepage = false,             % 美赛通常不需要单独的标题页
           abstract = true,
           }
-\setlength{\headheight}{14pt}
+\setlength{\headheight}{14pt}   %设置段落格式防止目录消失
 \addtolength{\topmargin}{-2pt}
 
 % ==================== 常用宏包引入 ====================
@@ -57,9 +57,8 @@
 \setlength{\cftbeforesecskip}{6pt}
 \renewcommand{\contentsname}{\hspace*{\fill}\Large\bfseries Contents \hspace*{\fill}}
 
-\title{Managing Sports for Success}
-% \author{\small \href{http://www.latexstudio.net/}
-%   {\includegraphics[width=7cm]{mcmthesis-logo}}}
+\title{A Dual-Track Decision System for Professional Sports Management: Performance and Finance}
+
 \date{\today}
 
 \begin{document}
@@ -89,6 +88,7 @@ Sports Analytics; WNBA; Dynamic Decision Making; Player Valuation; Capital Struc
 \end{keywords}
 
 \end{abstract}
+
 
 \maketitle
 
@@ -147,11 +147,11 @@ The problem contains several interconnected components that require structured m
 \toprule
 \textbf{Task} & \textbf{Requirement} & \textbf{Model Component} & \textbf{Section} \\
 \midrule
-1 & Dynamic decision-making model & Dual-Track Framework + Decision Engine & 3 \\
-2 & Player acquisition strategy & Roster Optimization Model & 4 \\
-3 & League expansion impact & Geographic Competition Model & 5 \\
-4 & Additional business decision & Dynamic Ticket Pricing Model & 6 \\
-5 & Key player injury response & Injury Risk Management Model & 7 \\
+1 & Dynamic decision-making model & Dual-Track Framework + Decision Engine & 4 \\
+2 & Player acquisition strategy & Roster Optimization Model & 5 \\
+3 & League expansion impact & Geographic Competition Model & 6 \\
+4 & Additional business decision & Dynamic Ticket Pricing Model & 7 \\
+5 & Key player injury response & Injury Risk Management Model & 8 \\
 6 & Letter to owner/GM & Strategic Recommendations & 10 \\
 \bottomrule
 \end{tabular}
@@ -337,7 +337,7 @@ The financial model decomposes team economics into revenue and cost components.
 R_{\text{total}} = R_{\text{tickets}} + R_{\text{TV}} + R_{\text{sponsorship}} + R_{\text{merchandise}} + R_{\text{other}}
 \end{equation}
 
-Ticket revenue follows a game-by-game dynamic pricing model (detailed in Section 6):
+Ticket revenue follows a game-by-game dynamic pricing model (detailed in Section 7):
 \begin{equation}
 R_{\text{tickets}} = \sum_{g=1}^{20} P_g \times A_g
 \end{equation}
@@ -379,43 +379,7 @@ G\&A and Other & 9.45 & -- & -- \\
 \end{tabular}
 \end{table}
 
-\subsection{Model E: Capital Structure Optimization}
-
-The optimal capital structure minimizes the Weighted Average Cost of Capital (WACC):
-\begin{equation}
-\text{WACC} = \frac{E}{V} \times r_e + \frac{D}{V} \times r_d \times (1 - T_c)
-\end{equation}
-
-The cost of equity follows CAPM with Hamada's leverage adjustment:
-\begin{equation}
-r_e = r_f + \beta_L \times (r_m - r_f), \quad \text{where } \beta_L = \beta_U \times \left[1 + (1-T_c) \times \frac{D}{E}\right]
-\end{equation}
-
-Using $r_f = 4.5\%$, $r_m - r_f = 5.5\%$, and $\beta_U = 0.9$, we model the cost of debt with a nonlinear credit spread:
-\begin{equation}
-r_d = r_{\text{base}} + 0.02 \times \left(\frac{D/V}{0.30}\right)^2
-\end{equation}
-
-\begin{table}[H]
-\centering
-\caption{Capital Structure Analysis}
-\begin{tabular}{cccccl}
-\toprule
-\textbf{D/V} & \textbf{$r_e$} & \textbf{$r_d$} & \textbf{WACC} & \textbf{Int. Coverage} & \textbf{Assessment} \\
-\midrule
-0\% & 9.45\% & -- & 9.45\% & $\infty$ & Conservative \\
-10\% & 9.72\% & 5.11\% & 9.13\% & 15.8x & Very safe \\
-20\% & 10.03\% & 5.44\% & 8.87\% & 7.4x & Safe, near-optimal \\
-\textbf{25\%} & \textbf{10.20\%} & \textbf{5.69\%} & \textbf{8.79\%} & \textbf{5.6x} & \textbf{Recommended} \\
-30\% & 10.40\% & 6.00\% & 8.76\% & 4.3x & Optimal WACC \\
-40\% & 10.85\% & 6.89\% & 8.82\% & 2.9x & Elevated risk \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Given CBA uncertainty, we recommend a conservative 20-25\% target with emphasis on revolving credit facilities.
-
-\subsection{Dynamic Decision Engine}
+\subsection{Model D: Dynamic Decision Engine}
 
 The core innovation is a trigger-based decision framework that monitors state variables and activates corresponding rules.
 
@@ -465,6 +429,42 @@ CBA Change & New CBA announced & CRITICAL & Recalculate all values, full strateg
 
 General principles: Revenue surge increases debt capacity by 5-10\%; revenue decline reduces debt by 10-15\%; playoff contention allows short-term debt for acquisitions; star injury uses insurance proceeds; CBA uncertainty maximizes revolving capacity.
 
+\subsection{Model E: Capital Structure Optimization}
+
+The optimal capital structure minimizes the Weighted Average Cost of Capital (WACC):
+\begin{equation}
+\text{WACC} = \frac{E}{V} \times r_e + \frac{D}{V} \times r_d \times (1 - T_c)
+\end{equation}
+
+The cost of equity follows CAPM with Hamada's leverage adjustment:
+\begin{equation}
+r_e = r_f + \beta_L \times (r_m - r_f), \quad \text{where } \beta_L = \beta_U \times \left[1 + (1-T_c) \times \frac{D}{E}\right]
+\end{equation}
+
+Using $r_f = 4.5\%$, $r_m - r_f = 5.5\%$, and $\beta_U = 0.9$, we model the cost of debt with a nonlinear credit spread:
+\begin{equation}
+r_d = r_{\text{base}} + 0.02 \times \left(\frac{D/V}{0.30}\right)^2
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Capital Structure Analysis}
+\begin{tabular}{cccccl}
+\toprule
+\textbf{D/V} & \textbf{$r_e$} & \textbf{$r_d$} & \textbf{WACC} & \textbf{Int. Coverage} & \textbf{Assessment} \\
+\midrule
+0\% & 9.45\% & -- & 9.45\% & $\infty$ & Conservative \\
+10\% & 9.72\% & 5.11\% & 9.13\% & 15.8x & Very safe \\
+20\% & 10.03\% & 5.44\% & 8.87\% & 7.4x & Safe, near-optimal \\
+\textbf{25\%} & \textbf{10.20\%} & \textbf{5.69\%} & \textbf{8.79\%} & \textbf{5.6x} & \textbf{Recommended} \\
+30\% & 10.40\% & 6.00\% & 8.76\% & 4.3x & Optimal WACC \\
+40\% & 10.85\% & 6.89\% & 8.82\% & 2.9x & Elevated risk \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Given CBA uncertainty, we recommend a conservative 20-25\% target with emphasis on revolving credit facilities.
+
 \subsection{Implementation Timeline}
 
 \textbf{Immediate Actions (Pre-2025 Season):} Finalize dynamic pricing system; sign veteran rim protector; execute sponsor renewals with 3-year terms; purchase key player injury insurance (\$18M); establish \$50M revolving credit facility.
@@ -477,7 +477,7 @@ General principles: Revenue surge increases debt capacity by 5-10\%; revenue dec
 
 This section addresses Task 2: developing a strategy to acquire players using standard league practices.
 
-\subsection{Roster Optimization Model}
+\subsection{Model C: Roster Optimization Model}
 
 \subsubsection{Mathematical Formulation}
 
@@ -990,9 +990,9 @@ The core structure---dual-track optimization, trigger-based decisions, Monte Car
 
 
 \newpage  % 信件
-\begin{letter}{Dear Team Management,}
+\begin{letter}{\textbf{Dear Team Management,}}
 
-\vspace*{1cm}
+\vspace{0.5cm}
 
 Thank you for the opportunity to evaluate the Indiana Fever’s strategic trajectory during this transformational era for the WNBA. The "Caitlin Clark Phenomenon" has moved the franchise beyond the traditional boundaries of a sports team, evolving it into a high-growth entertainment asset. Our integrated analytical framework, which balances competitive success with long-term financial sustainability, confirms that the organization is currently positioned at a critical inflection point where data-driven management can yield unprecedented returns.
 
@@ -1004,30 +1004,67 @@ Looking toward the horizon of league expansion and upcoming CBA negotiations, th
 
 In summary, the Indiana Fever’s path to becoming a premier global sports brand requires a synthesis of aggressive commercial monetization and calculated competitive risk-taking. By implementing our recommended strategic roadmap---ranging from immediate ticket yield optimization to long-term equity-based player retention---the franchise can transform this generational talent window into a sustainable dynasty of both championship titles and financial excellence. The window for bold, data-driven action is now.
 
-\vspace{1cm}
+\vspace{0.5cm}
 
-\noindent Respectfully,\\
-\textbf{[2617170] Strategic Advisory Group}
+\noindent Respectfully submitted,\\[0.3cm]
+\textbf{Team 2617170}\\
+Strategic Advisory Group
 
 \end{letter}
 
 \newpage
 
-\begin{appendices}   %代码附注
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{Reference}
 
-\section{First appendix}
+\bibitem{1} Gi-Beum Kim. Change of the Warm Water Temperature for the Development of Smart Healthecare Bathing System. Hwahak konghak. 2006, 44(3): 270-276.
+\bibitem{2} \url{https://en.wikipedia.org/wiki/Convective_heat_transfer#Newton.27s_law_of_cooling}
+\bibitem{3} \url{https://en.wikipedia.org/wiki/Navier\%E2\%80\%93Stokes_equations}
+\bibitem{4} \url{https://en.wikipedia.org/wiki/Computational_fluid_dynamics}
+\bibitem{5} Holman J P. Heat Transfer (9th ed.), New York: McGraw-Hill, 2002. 
+\bibitem{6} Liu Weiguo, Chen Zhaoping, ZhangYin. Matlab program design and application. Beijing: Higher education press, 2002. (In Chinese)
 
-In addition, your report must include a letter to the Chief Financial Officer (CFO) of the Goodgrant Foundation, Mr. Alpha Chiang, that describes the optimal investment strategy, your modeling approach and major results, and a brief discussion of your proposed concept of a return-on-investment (ROI). This letter should be no more than two pages in length.
+\end{thebibliography}
 
-Here are simulation programmes we used in our model as follow.\\
+\newpage
 
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
-% \lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+\begin{appendices}
 
-\section{Second appendix}
+\section{Data Sources and Key Parameters}
 
-some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
-% \lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
+\subsection{Data Sources}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Data Type} & \textbf{Source} \\
+\midrule
+Player Statistics & Basketball-Reference, Her Hoop Stats \\
+Salary Data & Spotrac, WNBA Official \\
+Team Valuations & Sportico, Forbes \\
+Attendance Data & ESPN, WNBA Official \\
+TV Ratings & Nielsen, Sports Media Watch \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Model Parameters}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+\midrule
+$\alpha$ & 0.55 & Profit-win trade-off weight \\
+$\gamma$ & 0.003 & Distance decay coefficient \\
+Salary Cap & \$1.4M & 2024 WNBA team cap \\
+Base Injury Rate & 5\% & Annual star player injury probability \\
+Demand Elasticity & 100 & Tickets per \$1 price change \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{appendices}
 
@@ -1063,6 +1100,7 @@ some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
 \setcounter{page}{\value{lastpage}}
 
 \end{document}
+
 
 %%
 %% This work consists of these files mcmthesis.dtx,
