@@ -93,13 +93,17 @@
 \begin{document}
 
 \begin{abstract}
-Professional sports teams must balance on-court competitiveness with financial profitability. We develop an integrated Decision Support System (DSS) for the Indiana Fever (WNBA), a franchise at an inflection point driven by the ``Caitlin Clark effect.'' Our system addresses this dual mandate through seven interconnected mathematical models.
+Professional sports organizations must constantly reconcile two competing objectives: winning games and remaining financially viable. In the evolving WNBA environment—characterized by salary caps, roster constraints, and rapid revenue growth—the tension between performance and profitability becomes especially pronounced. Using the Indiana Fever as a representative case, we develop a structured decision framework that evaluates how superstar-driven commercial expansion can be translated into long-term competitive and financial stability.
 
-The core \textbf{Dual-Track Framework} optimizes a weighted objective $V = \alpha \cdot \text{Profit\_Index} + (1-\alpha) \cdot \text{Win\_Index}$, with $\alpha$ calibrated via the Analytic Hierarchy Process (AHP) to $\alpha = 0.55$. A \textbf{Dual-Dimension Player Value Model} combines WAR-based performance metrics with Shapley-value commercial attribution; our analysis reveals Clark's commercial value exceeds her performance value by 11.3:1. A \textbf{State-Transition Decision Engine} formalizes dynamic management as a Markov Decision Process (MDP) with 12 trigger-action rules.
+We first construct a \textbf{Dual-Dimension Player Valuation Model} that separates total player value into \textbf{performance contribution} and \textbf{commercial impact}. On-court value is quantified through a WAR-based marginal win approach, while off-court value is attributed using observable revenue proxies and demand indicators. This decomposition highlights the degree of value concentration in high-visibility players and provides a principled basis for balancing salary allocation with brand externalities.
 
-\textbf{Roster optimization} via mixed-integer linear programming under the \$1.4M salary cap yields a 12-player roster with \$8.2M projected surplus value. A \textbf{geographic competition model} with exponential distance decay classifies expansion threats: Cincinnati (112 mi, CRITICAL), Cleveland and Detroit (HIGH), while confirmed expansions Golden State and Toronto pose LOW to MODERATE risk. \textbf{Dynamic ticket pricing} with opponent-tier, temporal, and star-availability multipliers projects \$35.6M gate revenue (+21.1\% over static pricing). \textbf{Monte Carlo simulation} (10,000 iterations) yields expected profit of \$32.2M (90\% CI: [\$20.1M, \$43.2M]).
+Building on this valuation layer, we design a \textbf{Financial Forecasting and Revenue Optimization System} linking roster composition to ticket sales, sponsorship income, broadcast exposure, and merchandise revenue. A \textbf{Dynamic Ticket Pricing Model} adjusts game-level prices based on opponent tier, demand elasticity, and arena capacity constraints. These revenue projections feed directly into a \textbf{Mixed-Integer Roster Optimization Framework}, which selects feasible lineups under salary cap and positional restrictions while maximizing a profit-weighted competitive objective.
 
-Key recommendations: implement a 32-minute cap on Clark's playing time, secure \$18M key-player insurance, and lock in sponsor agreements before potential Midwest expansion.
+To incorporate uncertainty, we introduce a \textbf{State-Transition Decision Engine} that updates strategic parameters when predefined thresholds—such as injury events, performance deviations, or league structural changes—are triggered. Player health risk is modeled probabilistically, and scenario evaluation ensures robustness under playoff variability and expansion shocks. In addition, a \textbf{Gravity-Based Geographic Competition Model} quantifies regional market overlap and evaluates expansion-induced revenue risk.
+
+Under current assumptions, disciplined load management, targeted defensive investment, calibrated pricing adjustments, and proactive sponsorship stabilization jointly improve projected operating performance while maintaining playoff-level competitiveness. Rather than optimizing wins or revenue in isolation, the framework offers a quantitative method for evaluating strategic trade-offs in regulated professional sports environments.
+
+Overall, this study provides an integrated yet operational modeling approach that connects player valuation, financial projection, roster construction, and dynamic adjustment into a unified decision-support structure.
 
 \begin{keywords}
 Sports Analytics; WNBA; Dynamic Decision Making; Shapley Value; Player Valuation; Mixed-Integer Programming; Monte Carlo Simulation; Markov Decision Process
@@ -300,7 +304,7 @@ where $\beta = 0.4$ (calibrated via AHP for commercially-driven franchises like 
 
 \textbf{Performance Value} is derived from Wins Above Replacement (WAR) \cite{kubatko2007}:
 \begin{equation}
-\text{WAR} = \frac{(\text{BPM} - \text{BPM}_{\text{replacement}}) \times \text{Minutes\_Played}}{48 \times 40}, \quad V_{\text{performance}} = \text{WAR} \times \text{VPW}
+\text{WAR} = \frac{(\text{BPM} - \text{BPM}_{\text{replacement}}) \times \text{Minutes\_Played}}{48\,(\text{min/game}) \times 40\,(\text{games})}, \quad V_{\text{performance}} = \text{WAR} \times \text{VPW}
 \end{equation}
 where $\text{BPM}_{\text{replacement}} = -2.0$ and VPW $\approx$ \$300,000 (see Appendix A for calibration details).
 
@@ -873,6 +877,18 @@ While developed for Indiana Fever, the framework adapts to other teams by:
 The core architecture---dual-track optimization, MDP decisions, Shapley-value assessment, Monte Carlo risk quantification---applies broadly across professional sports.
 
 \newpage
+
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+\raggedleft
+\includegraphics[width=5cm]{./figures/logo.jpg}
+\end{minipage}
+
+\vspace{-2cm} %前拉间距
+
 \begin{letter}{\textbf{To: Indiana Fever Ownership and General Management}}
 
 \vspace{0.2cm}
