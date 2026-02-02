@@ -28,6 +28,7 @@
 \usepackage[backend=bibtex]{biblatex}   % for RStudio Complie
 \usepackage{tocloft}
 \usepackage[skip=3pt]{caption} % 缩小标题与下方表格的距离
+\usepackage{fancyhdr}
 
 % ==================== 代码块设置 ====================
 \geometry{
@@ -97,15 +98,27 @@ Sports Analytics; WNBA; Dynamic Decision Making; Player Valuation; Capital Struc
 
 \maketitle
 
-%% Generate the Table of Contents, if it's needed.
-% \renewcommand{\contentsname}{\centering Contents}
-\tableofcontents        % 若不想要目录, 注释掉该句
-\thispagestyle{empty}
+% ===== 目录页：页码在页脚，显示1、2 =====
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}  % 清空页眉页脚
+\fancyfoot[C]{\thepage}  % 页脚居中显示页码
+\renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
+
+\tableofcontents
 
 \newpage
 
-\section{Introduction}
+% ===== 正文页：恢复模板原来的页眉样式 =====
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{Team \# 2617170}
+    \fancyhead[R]{Page \thepage\ of \pageref{LastPage}}
+    \renewcommand{\headrulewidth}{0.4pt}
+}
+\pagestyle{plain}
 
+\section{Introduction}
 
 \subsection{Problem Background}    %ych-同意
 Professional sports represent a unique intersection of athletic competition and business enterprise. The WNBA provides a particularly relevant setting for studying this trade-off due to its rapid growth in media exposure, increasing franchise valuations, and strict structural constraints such as salary caps and roster limits.
@@ -169,6 +182,8 @@ These models feed into an Integrated Decision Support System (DSS) comprising se
 \includegraphics[width=13.4cm]{./figures/flowchart.png}
 \caption{Flowchart} \label{fig1}
 \end{figure}
+
+\newpage
 
 \begin{itemize}
 \item \textbf{Model A: Dual-Dimension Player Value Model} --- Quantifies both on-court performance and commercial contributions
