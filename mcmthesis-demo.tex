@@ -115,13 +115,7 @@ We select the Indiana Fever as our primary case study for several compelling rea
 
 \textbf{Second,} Because of the Indianapolis MSA population (2.1 million), the Fever represents a small-market franchise.But it suddenly commands national attention, creating strategic challenges around market defense, pricing optimization, and sustainable growth that differ fundamentally from large-market teams.
 
-<<<<<<< HEAD
-\textbf{Third,} the team's 2024 transformation---from a losing record to playoff contention accompanied by approximately 300\% revenue growth, provides rich, recent data for model calibration and validation.
-
-\textbf{Fourth,} the WNBA's ongoing structural changes such as expansion, CBA negotiations, new media deals.etc make this an ideal context to demonstrate dynamic decision-making under uncertainty.
-=======
 \textbf{Third,} the team's 2024 transformation---from a losing record to playoff contention accompanied by approximately 300\% revenue growth---provides rich, recent data for model calibration and validation. The WNBA's ongoing structural changes (expansion, CBA negotiations, new media deals) make this an ideal context to demonstrate dynamic decision-making under uncertainty.
->>>>>>> b13e6249a33b3d3b32659a09ab55a0c0a30d3b97
 
 \begin{table}[H]
 \centering
@@ -144,26 +138,6 @@ Playoff Result & First Round Exit & -- & Room for improvement \\
 
 The problem contains several interconnected components that require structured modeling.
 
-<<<<<<< HEAD
-\textbf{First, player evaluation must extend beyond traditional performance statistics.} Athletic contribution influences team wins, while popularity and market appeal affect revenue streams such
-as ticket sales, merchandise, and media exposure. Therefore, player value should be modeled
-as a multi-dimensional construct combining competitive and commercial factors.
-
-\textbf{Second, team profitability depends on both revenue generation and cost control.} Revenue is
-influenced by team performance, player marketability, and external market conditions, whereas
-costs are constrained by salary structures and league regulations. A financial optimization
-framework is required to determine sustainable investment levels.
-
-\textbf{Third, decision-making is dynamic rather than static.} Player injuries, aging effects, and eco-
-nomic fluctuations introduce uncertainty over time. Consequently, the model must incorporate
-risk and allow for strategic adjustment across multiple periods.
-
-\textbf{Finally}, league-level policies, including salary caps and potential expansion, impose struc-
-tural constraints that alter optimal strategies.\textbf{ These constraints must be explicitly embedded
-within} the modeling framework.
-
-=======
->>>>>>> b13e6249a33b3d3b32659a09ab55a0c0a30d3b97
 \textbf{We decompose the problem into six interconnected tasks} as specified in the problem statement, developing corresponding model components for each:
 
 \begin{table}[H]
@@ -233,6 +207,7 @@ The WNBA salary cap structure (\$1.4M team cap, \$252K maximum individual salary
  Player injury probability increases with age, accumulated minutes played, and injury history.
  New collective bargaining agreement (CBA) negotiations may significantly alter salary structures post-2025, creating structural uncertainty.
 
+\end{itemize}
 
 \section{Notations}    %YCH-增加了内容及分类
 
@@ -459,7 +434,7 @@ The decision engine continuously tracks:
 \begin{table}[H]
 \centering
 \caption{Dynamic Decision Triggers and Responses}
-\begin{tabular}{p{2.2cm}p{2.8cm}cp{4.5cm}}
+\begin{tabular}{p{3.2cm}p{2.8cm}cp{5.0cm}}
 \toprule
 \textbf{Trigger} & \textbf{Condition} & \textbf{Priority} & \textbf{Key Actions} \\
 \midrule
