@@ -183,11 +183,23 @@ We decompose the problem into six interconnected tasks, developing corresponding
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=14.5cm]{./figures/flowchart.png}
+\includegraphics[width=16cm]{./figures/flowchart.png}
 \caption{Architecture of the Integrated Decision Support System. Model A (player value) feeds into both Models B (finance) and C (roster), while Model D (decision engine) dynamically adjusts parameters across all models based on trigger conditions.} \label{fig1}
 \end{figure}
 
-The seven model components are: \textbf{Model A} (Dual-Dimension Player Value)---quantifies on-court performance (WAR-based) and commercial contributions (Shapley-value attribution); \textbf{Model B} (Financial Forecasting)---projects revenue and costs with game-level granularity; \textbf{Model C} (Roster Optimization)---constructs optimal rosters via mixed-integer programming; \textbf{Model D} (State-Transition Decision Engine)---MDP-based system for dynamic strategy adjustments; \textbf{Model E} (Capital Structure Optimizer)---determines optimal debt-equity mix via WACC minimization; \textbf{Model F} (Player Potential Projection)---forecasts future player value with age-injury trajectories; \textbf{Model G} (Geographic Competition)---analyzes expansion impacts using gravity-based market overlap.
+The seven model components are:
+
+\begin{itemize}
+\item \textbf{Model A} (Dual-Dimension Player Value)---quantifies on-court performance (WAR-based) and commercial contributions (Shapley-value attribution); 
+\item \textbf{Model B} (Financial Forecasting)---projects revenue and costs with game-level granularity; 
+\item \textbf{Model C} (Roster Optimization)---constructs optimal rosters via mixed-integer programming; 
+\item \textbf{Model D} (State-Transition Decision Engine)---MDP-based system for dynamic strategy adjustments; 
+\item \textbf{Model E} (Capital Structure Optimizer)---determines optimal debt-equity mix via WACC minimization; 
+\item \textbf{Model F} (Player Potential Projection)---forecasts future player value with age-injury trajectories; 
+\item \textbf{Model G} (Geographic Competition)---analyzes expansion impacts using gravity-based market overlap.
+\end{itemize}
+
+This unified framework balances competitive and financial objectives through a weighted optimization approach with dynamically adjustable parameters.
 
 \subsection{Our Contributions}
 The key innovations of this paper include: \textbf{(1)} \textit{Shapley-Value Commercial Attribution}---formalizing the decomposition of team revenue into individual player contributions using cooperative game theory; \textbf{(2)} \textit{MDP-Based Dynamic Decision Framework}---formalizing dynamic decision-making as a finite-horizon Markov Decision Process; \textbf{(3)} \textit{Integrated Dual-Track Optimization}---jointly optimizing roster construction and financial capital structure under AHP-calibrated weights; and \textbf{(4)} \textit{Bidirectional Expansion Analysis}---assessing both threats and opportunities from league expansion.
@@ -203,7 +215,7 @@ All models are calibrated using publicly available data from authoritative sourc
 \caption{Data Sources Overview}
 \label{tab:data}
 \small
-\begin{tabular}{p{3.2cm}p{4.2cm}p{2.2cm}p{2.2cm}}
+\begin{tabular}{p{4cm}p{4.2cm}p{2.2cm}p{4cm}}
 \toprule
 \textbf{Data Category} & \textbf{Source} & \textbf{Time Range} & \textbf{Records} \\
 \midrule
@@ -262,7 +274,15 @@ $d_{ij}$ & Distance between cities $i,j$ & km & $a_t$ & Action taken at time $t$
 This section addresses Task 1: designing a dynamic decision-making model to help ownership and management adjust leverage in response to changing team performance and economic conditions.
 
 \subsection{Dual-Track Management Framework}
-We conceptualize team management as two parallel optimization tracks \cite{dietl2011}: \textbf{Track A (Business Operations)} focuses on revenue maximization, cost management, capital structure, and market positioning; \textbf{Track B (Basketball Operations)} concentrates on win maximization, roster construction, player development, and game strategy. These tracks are linked through an integrated objective function:
+
+We conceptualize team management as two parallel optimization tracks \cite{dietl2011}: 
+
+\textbf{Track A (Business Operations)} focuses on revenue maximization, cost management, capital structure, and market positioning; 
+
+\textbf{Track B (Basketball Operations)} concentrates on win maximization, roster construction, player development, and game strategy. 
+
+These tracks are linked through an integrated objective function:
+
 \begin{equation}
 \text{maximize: } V = \alpha \cdot \text{Profit\_Index} + (1-\alpha) \cdot \text{Win\_Index}
 \end{equation}
@@ -304,7 +324,7 @@ A critical modeling choice is the method for attributing commercial revenue to i
 \caption{Comparison of Commercial Value Attribution Methods}
 \label{tab:method_comparison}
 \small
-\begin{tabular}{p{2.5cm}p{4.0cm}p{3.2cm}p{3.0cm}}
+\begin{tabular}{p{2.5cm}p{4.0cm}p{3.2cm}p{5.0cm}}
 \toprule
 \textbf{Method} & \textbf{Formula} & \textbf{Clark Value (\$M)} & \textbf{Limitations} \\
 \midrule
@@ -371,12 +391,14 @@ Lexie Hull & 0.5 & 0.15 & 0.10 & 0.13 & 1.5:1 \\
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=13.5cm]{./figures/01_player_value_decomposition.png}
+\includegraphics[width=13.2cm]{./figures/01_player_value_decomposition.png}
 \caption{Player Value Decomposition: Performance (WAR-based, dark) versus Commercial (Shapley-attributed, light) value. Clark's commercial dominance is visually striking.} \label{fig2}
 \end{figure}
 
 \subsection{Model B: Financial Forecasting Model}
-Total revenue comprises: $R_{\text{total}} = R_{\text{tickets}} + R_{\text{TV}} + R_{\text{sponsorship}} + R_{\text{merchandise}} + R_{\text{other}}$. Total cost includes: $C_{\text{total}} = C_{\text{payroll}} + C_{\text{operations}} + C_{\text{arena}} + C_{\text{travel}} + C_{\text{marketing}} + C_{\text{other}}$.
+Total revenue comprises: $R_{\text{total}} = R_{\text{tickets}} + R_{\text{TV}} + R_{\text{sponsorship}} + R_{\text{merchandise}} + R_{\text{other}}$. 
+
+Total cost includes: $C_{\text{total}} = C_{\text{payroll}} + C_{\text{operations}} + C_{\text{arena}} + C_{\text{travel}} + C_{\text{marketing}} + C_{\text{other}}$.
 
 \begin{table}[H]
 \centering
@@ -416,7 +438,7 @@ Solving via backward induction yields the optimal policy $\pi^*(s_t)$. The follo
 \centering
 \caption{Dynamic Decision Triggers and Responses (MDP Optimal Policy)}
 \small
-\begin{tabular}{p{2.5cm}p{2.3cm}cp{4.8cm}}
+\begin{tabular}{p{3.0cm}p{3.0cm}cp{7.2cm}}
 \toprule
 \textbf{Trigger} & \textbf{Condition} & \textbf{Priority} & \textbf{Optimal Actions} \\
 \midrule
@@ -496,11 +518,22 @@ Wk 40 & (stable, contender, healthy, uncertain) & Season end & Review & Plan off
 \textbf{Model Coupling:} A key feature is the feedback loop connecting all components: Model A feeds player values to Model C (roster optimization); Model C determines payroll costs and projected wins for Model B (finance); Model B informs Model E (capital structure); Model D monitors all models and dynamically adjusts parameters; Model G (geographic competition) adjusts revenue forecasts via market overlap coefficients.
 
 \subsection{Model E: Capital Structure Optimization}
-The optimal capital structure minimizes WACC \cite{brealey2020}:
+The optimal capital structure minimizes the Weighted Average Cost of Capital (WACC) \cite{brealey2020}:
 \begin{equation}
-\text{WACC} = \frac{E}{V} \times r_e + \frac{D}{V} \times r_d \times (1 - T_c), \quad r_e = r_f + \beta_L \times (r_m - r_f)
+\text{WACC} = \frac{E}{V} \times r_e + \frac{D}{V} \times r_d \times (1 - T_c), 
 \end{equation}
-where $\beta_L = \beta_U \times [1 + (1-T_c) \times D/E]$ (Hamada's leverage adjustment \cite{hamada1972}). Using $r_f = 4.5\%$, $r_m - r_f = 5.5\%$, $\beta_U = 0.9$ \cite{damodaran2024}, the cost of debt follows $r_d = r_{\text{base}} + 0.02 \times (D/V / 0.30)^2$.
+
+The cost of equity follows CAPM with Hamada’s leverage adjustment:
+\begin{equation}
+\quad r_e = r_f + \beta_L \times (r_m - r_f)
+\end{equation}
+
+
+where $\beta_L = \beta_U \times [1 + (1-T_c) \times D/E]$ (Hamada's leverage adjustment \cite{hamada1972}). 
+
+Using $r_f = 4.5\%$, $r_m - r_f = 5.5\%$, $\beta_U = 0.9$ (\cite{damodaran2024}), 
+
+the cost of debt follows $r_d = r_{\text{base}} + 0.02 \times (D/V / 0.30)^2$.
 
 \begin{table}[H]
 \centering
@@ -522,7 +555,7 @@ Although the theoretical WACC minimum occurs at $D/V = 30\%$, CBA uncertainty an
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=13cm]{./figures/05_wacc_optimization.png}
+\includegraphics[width=16cm]{./figures/05_wacc_optimization.png}
 \caption{WACC as a function of leverage ratio $D/V$. The shaded region (20--25\%) indicates the recommended range.} \label{fig3}
 \end{figure}
 
@@ -554,11 +587,14 @@ An injury risk factor $r_{\text{injury}} = 1 - [0.05 + 0.01 \times \max(0, \text
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=10cm]{./figures/04_age_performance_curve.png}
+\includegraphics[width=16cm]{./figures/04_age_performance_curve.png}
 \caption{Modeled age-performance curve with WNBA historical data. Guards (blue) peak later than forwards/centers (orange).} \label{fig4}
 \end{figure}
 
 \subsection{Recommended Acquisition Strategy}
+
+Based on our optimization model, roster analysis, and identified gaps, we recommend the following strategic priorities for the 2025 season:
+
 \textbf{Priority 1: Veteran Interior Defender.} Defensive rating (105.2, 9th in WNBA) indicates clear need. Target: experienced center, defensive BPM $>$ 2.0. Budget: \$150--200K. Expected: 1.5--2.0 WAR.
 
 \textbf{Priority 2: Depth Guard.} Enable Clark load management. Target: AST/TO ratio $>$ 2.0, 3P\% $>$ 35\%. Budget: \$75--100K. Expected: 0.5--1.0 WAR.
@@ -628,7 +664,7 @@ LOW / Beneficial & $> 700$ & $< 0.15$ & Net positive from national revenue shari
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=15cm]{./figures/08_geographic_competition.png}
+\includegraphics[width=16cm]{./figures/08_geographic_competition.png}
 \caption{Geographic competition map showing expansion city distances from Indianapolis. Confirmed expansions (Golden State, Toronto) marked with stars.} \label{fig6}
 \end{figure}
 
@@ -642,7 +678,7 @@ LOW / Beneficial & $> 700$ & $< 0.15$ & Net positive from national revenue shari
 
 \section{Dynamic Ticket Pricing Strategy}
 
-This section addresses Task 4: optimizing ticket pricing strategy.
+This section addresses the additional business decision (Task 4) of optimizing ticket pricing strategy.
 
 \subsection{Demand Function and Pricing Model}
 Based on 2024 attendance data from Gainbridge Fieldhouse (capacity: 17,274) \cite{att2024}, we estimate demand:
@@ -661,7 +697,7 @@ where $P_{\text{base}} = \$85$.
 \centering
 \caption{Dynamic Pricing Multiplier Structure}
 \small
-\begin{tabular}{p{2.0cm}p{4.5cm}cc}
+\begin{tabular}{p{2.0cm}p{5cm}cc}
 \toprule
 \textbf{Factor} & \textbf{Condition} & \textbf{Multiplier} & \textbf{Rationale} \\
 \midrule
@@ -676,11 +712,13 @@ Timing & $<$2 weeks / $>$4 weeks to game & 1.05--1.10 / 1.00 & Urgency \\
 \end{tabular}
 \end{table}
 
-\textbf{Example:} Saturday vs.\ Chicago, Clark playing, 1 week out: $P^*_g = \$85 \times 1.40 \times 1.20 \times 1.30 \times 1.05 = \$205 \rightarrow \$200$ (ceiling).
+\textbf{Example:} Saturday vs.\ Chicago, Clark playing, 1 week out: 
+
+$P^*_g = \$85 \times 1.40 \times 1.20 \times 1.30 \times 1.05 = \$205 \rightarrow \$200$ (ceiling).
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=12cm]{./figures/06_pricing_strategy.png}
+\includegraphics[width=16cm]{./figures/06_pricing_strategy.png}
 \caption{Revenue comparison across 20 home games under three pricing strategies.} \label{fig7}
 \end{figure}
 
@@ -704,9 +742,10 @@ Dynamic pricing generates \$6.2M additional ticket revenue (+21.1\%). Recommende
 
 \section{Key Player Injury Management Model}
 
-Given the Fever's extreme financial dependence on Clark ($\sim$78\% of commercial value), robust injury risk management is a strategic imperative. This section addresses Task 5.
+Given the Fever's extreme financial dependence on Caitlin Clark ($\sim$78\% of commercial value), robust injury risk management is a strategic imperative. This section addresses Task 5.
 
 \subsection{Injury Risk Quantification}
+
 We model season injury probability using a logistic-inspired additive model (calibrated from 1,204 WNBA player-seasons \cite{drakos2010}):
 \begin{equation}
 P(\text{injury}) = P_{\text{base}} + \beta_1 \cdot \max(0, \text{MPG} - \tau) + \beta_2 \cdot \frac{G}{40} + \beta_3 \cdot \mathbb{1}_{\text{rest} < 2}
@@ -733,7 +772,7 @@ Season-Ending (ACL) & 10+ weeks & 20+ & \$12.0M & \$22.0M \\
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=13cm]{./figures/09_injury_impact.png}
+\includegraphics[width=16cm]{./figures/09_injury_impact.png}
 \caption{Financial impact cascade of a Clark injury: direct revenue loss and indirect effects.} \label{fig8}
 \end{figure}
 
@@ -743,8 +782,18 @@ Season-Ending (ACL) & 10+ weeks & 20+ & \$12.0M & \$22.0M \\
 \textbf{Insurance Recommendation:} Coverage $= V_{\text{commercial}} \times 1.2 = \$18.24$M. At 3\% premium: \$547K/year. Expected value: $0.10 \times \$12$M $-$ \$0.55M $= +$\$0.65M. \textbf{PURCHASE recommended.}
 
 \subsection{Injury Response Workflow}
-When key player injury occurs: \textbf{Day 0:} File insurance; activate ticket exchange. \textbf{Day 1--3:} Adjust pricing ($m_{\text{star}} = 0.75$); sign emergency replacement. \textbf{Week 1:} Reassess Model B projections; communicate to sponsors; evaluate trade market. \textbf{Ongoing:} Biweekly MDP updates; adjust $\alpha$ based on playoff contention.
 
+When key player injury occurs: 
+
+\begin{itemize}
+\item \textbf{Day 0:} File insurance; activate ticket exchange. 
+
+\item \textbf{Day 1--3:} Adjust pricing ($m_{\text{star}} = 0.75$); sign emergency replacement. 
+
+\item \textbf{Week 1:} Reassess Model B projections; communicate to sponsors; evaluate trade market. 
+
+\item \textbf{Ongoing:} Biweekly MDP updates; adjust $\alpha$ based on playoff contention.
+\end{itemize}
 
 \section{Sensitivity Analysis and Model Validation}
 
@@ -792,7 +841,15 @@ Monte Carlo simulation ($n = 10{,}000$) with stochastic sampling yields: \textbf
 \section{Model Evaluation}
 
 \subsection{Strengths}
-\textbf{(1) Integrated Framework:} Dual-track system simultaneously optimizes basketball and business operations through a unified objective function. \textbf{(2) Principled Calibration:} All parameters calibrated using AHP and real WNBA data from multiple authoritative sources. \textbf{(3) Dynamic Adaptability:} MDP-based engine enables principled strategy adjustments. \textbf{(4) Comprehensive Risk Management:} Monte Carlo simulation and scenario analysis provide robust uncertainty quantification. \textbf{(5) Actionable Outputs:} Specific, implementable recommendations with quantified expected impacts.
+\textbf{(1) Integrated Framework:} Dual-track system simultaneously optimizes basketball and business operations through a unified objective function. 
+
+\textbf{(2) Principled Calibration:} All parameters calibrated using AHP and real WNBA data from multiple authoritative sources. 
+
+\textbf{(3) Dynamic Adaptability:} MDP-based engine enables principled strategy adjustments. 
+
+\textbf{(4) Comprehensive Risk Management:} Monte Carlo simulation and scenario analysis provide robust uncertainty quantification. 
+
+\textbf{(5) Actionable Outputs:} Specific, implementable recommendations with quantified expected impacts.
 
 \subsection{Limitations and Extensions}
 \textbf{Limitations:} WNBA financial data is less comprehensive than major leagues; commercial value attribution relies on proxy metrics; linear demand function may not capture extreme price behavior; external macroeconomic factors not explicitly modeled.
@@ -800,8 +857,20 @@ Monte Carlo simulation ($n = 10{,}000$) with stochastic sampling yields: \textbf
 \textbf{Extensions:} Future enhancements could include: (1) Machine Learning for improved prediction using player tracking data; (2) Game Theory for strategic interactions in negotiations; (3) Real-Time Integration with live data feeds; (4) Multi-Season Optimization extending MDP horizon to 3--5 years.
 
 \subsection{Generalizability}
-While developed for Indiana Fever, the framework adapts to other teams by: adjusting $\alpha$ via team-specific AHP; recalibrating $\gamma$ for different markets; modifying $\beta$ based on roster composition; applying league-specific constraints. The core architecture---dual-track optimization, MDP decisions, Shapley-value assessment, Monte Carlo risk quantification---applies broadly across professional sports.
 
+While developed for Indiana Fever, the framework adapts to other teams by:
+
+\begin{enumerate}
+    
+\item Adjusting $\alpha$ based on team-specific priorities
+
+\item Recalibrating geographic parameters for different markets
+
+\item Modifying player value weights based on roster composition
+
+\end{enumerate}
+
+The core architecture---dual-track optimization, MDP decisions, Shapley-value assessment, Monte Carlo risk quantification---applies broadly across professional sports.
 
 \newpage
 \begin{letter}{\textbf{To: Indiana Fever Ownership and General Management}}
