@@ -115,9 +115,13 @@ We select the Indiana Fever as our primary case study for several compelling rea
 
 \textbf{Second,} Because of the Indianapolis MSA population (2.1 million), the Fever represents a small-market franchise.But it suddenly commands national attention, creating strategic challenges around market defense, pricing optimization, and sustainable growth that differ fundamentally from large-market teams.
 
+<<<<<<< HEAD
 \textbf{Third,} the team's 2024 transformation---from a losing record to playoff contention accompanied by approximately 300\% revenue growth, provides rich, recent data for model calibration and validation.
 
 \textbf{Fourth,} the WNBA's ongoing structural changes such as expansion, CBA negotiations, new media deals.etc make this an ideal context to demonstrate dynamic decision-making under uncertainty.
+=======
+\textbf{Third,} the team's 2024 transformation---from a losing record to playoff contention accompanied by approximately 300\% revenue growth---provides rich, recent data for model calibration and validation. The WNBA's ongoing structural changes (expansion, CBA negotiations, new media deals) make this an ideal context to demonstrate dynamic decision-making under uncertainty.
+>>>>>>> b13e6249a33b3d3b32659a09ab55a0c0a30d3b97
 
 \begin{table}[H]
 \centering
@@ -140,6 +144,7 @@ Playoff Result & First Round Exit & -- & Room for improvement \\
 
 The problem contains several interconnected components that require structured modeling.
 
+<<<<<<< HEAD
 \textbf{First, player evaluation must extend beyond traditional performance statistics.} Athletic contribution influences team wins, while popularity and market appeal affect revenue streams such
 as ticket sales, merchandise, and media exposure. Therefore, player value should be modeled
 as a multi-dimensional construct combining competitive and commercial factors.
@@ -157,6 +162,8 @@ risk and allow for strategic adjustment across multiple periods.
 tural constraints that alter optimal strategies.\textbf{ These constraints must be explicitly embedded
 within} the modeling framework.
 
+=======
+>>>>>>> b13e6249a33b3d3b32659a09ab55a0c0a30d3b97
 \textbf{We decompose the problem into six interconnected tasks} as specified in the problem statement, developing corresponding model components for each:
 
 \begin{table}[H]
@@ -275,76 +282,55 @@ $m_k$ & Pricing multiplier for factor $k$ & -- \\
 
 \section{Dynamic Decision-Making Model}
 
-This section addresses Task 1: designing a dynamic decision-making model to help ownership and management adjust leverage in response to changing team performance and economic conditions. Our framework integrates business operations and basketball operations through a dual-track management approach with explicit coordination mechanisms.
+This section addresses Task 1: designing a dynamic decision-making model to help ownership and management adjust leverage in response to changing team performance and economic conditions.
 
 \subsection{Dual-Track Management Framework}
 
 \subsubsection{Conceptual Foundation}
 
-We conceptualize team management as two parallel optimization tracks that must be coordinated to achieve organizational success:
+We conceptualize team management as two parallel optimization tracks that must be coordinated:
 
 \textbf{Track A: Business Operations} focuses on revenue maximization, cost management, capital structure optimization, and market positioning. Key decision variables include pricing strategies, sponsorship agreements, venue investments, and financial leverage.
 
 \textbf{Track B: Basketball Operations} concentrates on win maximization, roster construction, player development, and game strategy. Key decision variables include player acquisitions, draft selections, rotation management, and load management protocols.
 
-These tracks are linked through an integrated objective function that explicitly balances financial and competitive goals:
-
+These tracks are linked through an integrated objective function:
 \begin{equation}
 \text{maximize: } V = \alpha \cdot \text{Profit\_Index} + (1-\alpha) \cdot \text{Win\_Index}
 \end{equation}
-
 where both indices are normalized to [0,1] scales for comparability, and $\alpha \in [0,1]$ represents the relative weight assigned to financial versus competitive objectives.
 
 \subsubsection{Weight Calibration for Indiana Fever}
 
-The optimal $\alpha$ depends on team-specific circumstances. For Indiana Fever's current situation---characterized by strong revenue momentum, high asset appreciation potential, CBA uncertainty, and a young competitive core---we recommend $\alpha = 0.55$, prioritizing financial stability while maintaining competitive integrity. This weight reflects several considerations:
+For Indiana Fever's current situation---characterized by strong revenue momentum, high asset appreciation potential, CBA uncertainty, and a young competitive core---we recommend $\alpha = 0.55$, prioritizing financial stability while maintaining competitive integrity. This reflects: (1) strong revenue growth creates opportunity to lock long-term sponsors; (2) franchise valuation is sensitive to sustained financial performance; (3) CBA uncertainty suggests preserving financial flexibility; (4) the competitive window extends 5-7 years, allowing patient roster building.
 
-\begin{itemize}
-\item Strong revenue growth creates an opportunity to lock in long-term sponsor commitments
-\item Franchise valuation is highly sensitive to sustained financial performance
-\item CBA uncertainty suggests preserving financial flexibility
-\item The competitive window (Clark's prime years) extends 5-7 years, allowing patient roster building
-\end{itemize}
+\subsection{Model A: Dual-Dimension Player Value Assessment}
 
-The $\alpha$ parameter can be dynamically adjusted based on trigger conditions described in Section 3.4.
-
-\subsection{Core Model Components}
-
-\subsubsection{Model A: Dual-Dimension Player Value Assessment}
-
-Central to our framework is a dual-dimension player valuation model that captures both on-court contribution and commercial impact:
-
+Central to our framework is a dual-dimension player valuation model:
 \begin{equation}
 V_{\text{total}} = \beta \cdot V_{\text{performance}} + (1-\beta) \cdot V_{\text{commercial}}
 \end{equation}
-
-where $\beta$ represents the weight on performance value. For traditional analysis, $\beta \approx 0.7-0.8$; for commercially-driven franchises like the current Fever, we recommend $\beta = 0.4$.
+where $\beta$ represents the weight on performance value. For commercially-driven franchises like the current Fever, we recommend $\beta = 0.4$.
 
 \textbf{Performance Value Derivation:}
 
-Performance value is derived from Wins Above Replacement (WAR), a comprehensive metric capturing offensive and defensive contributions relative to a replacement-level player:
-
+Performance value is derived from Wins Above Replacement (WAR):
 \begin{equation}
 \text{WAR} = \frac{(\text{BPM} - \text{BPM}_{\text{replacement}}) \times \text{Minutes\_Played}}{48 \times 40}
 \end{equation}
-
-where $\text{BPM}_{\text{replacement}} = -2.0$ represents replacement-level performance (based on WNBA historical data), 48 is minutes per game, and 40 is games per regular season. The monetary conversion uses Value Per Win (VPW):
-
+where $\text{BPM}_{\text{replacement}} = -2.0$ represents replacement-level performance. The monetary conversion uses Value Per Win (VPW):
 \begin{equation}
 V_{\text{performance}} = \text{WAR} \times \text{VPW}
 \end{equation}
-
-We estimate VPW $\approx$ \$300,000 for WNBA teams based on marginal analysis of: ticket revenue increase per additional win (\$50,000), playoff probability value (\$100,000), merchandise uplift (\$30,000), and sponsorship value (\$120,000).
+We estimate VPW $\approx$ \$300,000 for WNBA teams based on marginal analysis of ticket revenue, playoff probability value, merchandise uplift, and sponsorship value.
 
 \textbf{Commercial Value Derivation:}
 
 Commercial value captures revenue contribution beyond on-court performance through a market influence index $M_i$. Using a Shapley value-inspired attribution approach:
-
 \begin{equation}
 V_{\text{commercial},i} = \frac{M_i}{\sum_j M_j} \times (R_{\text{total}} - R_{\text{baseline}})
 \end{equation}
-
-where $M_i$ incorporates social media reach (followers across platforms), merchandise rankings (jersey sales position), and TV rating impact (viewership multiplier when player participates). $R_{\text{baseline}}$ represents team revenue without star-driven premiums, estimated from historical pre-Clark Fever data.
+where $M_i$ incorporates social media reach, merchandise rankings, and TV rating impact. $R_{\text{baseline}}$ represents team revenue without star-driven premiums.
 
 \begin{table}[H]
 \centering
@@ -361,32 +347,27 @@ Lexie Hull & 0.5 & 0.15 & 0.10 & 0.13 & 1.5:1 \\
 \bottomrule
 \end{tabular}
 \begin{flushleft}
-\small\textit{Note: $V_{\text{total}}$ calculated with $\beta = 0.4$. Ratio indicates Performance:Commercial value. Clark's 1:11.3 ratio validates commercial prioritization strategy.}
+\small\textit{Note: $V_{\text{total}}$ calculated with $\beta = 0.4$. Ratio indicates Performance:Commercial value.}
 \end{flushleft}
 \end{table}
 
-\textbf{Key Insight:} Caitlin Clark's commercial value exceeds her (already elite) performance value by a factor of 11.3:1. This extraordinary ratio---unprecedented in WNBA history---validates treating her as a franchise asset whose value extends far beyond basketball statistics.
+\textbf{Key Insight:} Caitlin Clark's commercial value exceeds her (already elite) performance value by a factor of 11.3:1, validating treating her as a franchise asset whose value extends far beyond basketball statistics.
 
-\subsubsection{Model B: Financial Forecasting Model}
+\subsection{Model B: Financial Forecasting Model}
 
-The financial model decomposes team economics into revenue and cost components with game-level granularity.
+The financial model decomposes team economics into revenue and cost components.
 
 \textbf{Revenue Model:}
-
-Total revenue comprises multiple streams:
-
 \begin{equation}
 R_{\text{total}} = R_{\text{tickets}} + R_{\text{TV}} + R_{\text{sponsorship}} + R_{\text{merchandise}} + R_{\text{other}}
 \end{equation}
 
 Ticket revenue follows a game-by-game dynamic pricing model (detailed in Section 6):
-
 \begin{equation}
-R_{\text{tickets}} = \sum_{g=1}^{20} P_g \times A_g, \quad \text{where } P_g = P_{\text{base}} \times m_{\text{opponent}} \times m_{\text{day}} \times m_{\text{star}} \times m_{\text{urgency}}
+R_{\text{tickets}} = \sum_{g=1}^{20} P_g \times A_g
 \end{equation}
 
 \textbf{Cost Model:}
-
 \begin{equation}
 C_{\text{total}} = C_{\text{payroll}} + C_{\text{operations}} + C_{\text{arena}} + C_{\text{travel}} + C_{\text{marketing}} + C_{\text{other}}
 \end{equation}
@@ -404,7 +385,7 @@ TV (National Share) & 2.50 & 3.9\% & +15\% \\
 TV (Local Rights) & 4.50 & 7.1\% & +25\% \\
 Sponsorship & 12.00 & 18.8\% & +35\% \\
 Merchandise & 8.00 & 12.5\% & +40\% \\
-Other (Parking, Concessions, etc.) & 5.60 & 8.8\% & +20\% \\
+Other (Parking, Concessions) & 5.60 & 8.8\% & +20\% \\
 \midrule
 \textbf{Total Revenue} & \textbf{63.80} & \textbf{100\%} & +29\% \\
 \midrule
@@ -423,31 +404,19 @@ G\&A and Other & 9.45 & -- & -- \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Model E: Capital Structure Optimization}
+\subsection{Model E: Capital Structure Optimization}
 
-The optimal capital structure minimizes the Weighted Average Cost of Capital (WACC) while respecting industry-specific constraints on leverage. For a sports franchise with volatile revenues and high asset appreciation potential:
-
+The optimal capital structure minimizes the Weighted Average Cost of Capital (WACC):
 \begin{equation}
 \text{WACC} = \frac{E}{V} \times r_e + \frac{D}{V} \times r_d \times (1 - T_c)
 \end{equation}
 
-where:
-\begin{itemize}
-\item $E/V$ = equity proportion of capital structure
-\item $D/V$ = debt proportion of capital structure
-\item $r_e$ = cost of equity (CAPM-based with leverage-adjusted beta)
-\item $r_d$ = cost of debt (base rate plus credit spread)
-\item $T_c$ = corporate tax rate (21\% federal)
-\end{itemize}
-
-The cost of equity follows the Capital Asset Pricing Model with Hamada's leverage adjustment:
-
+The cost of equity follows CAPM with Hamada's leverage adjustment:
 \begin{equation}
 r_e = r_f + \beta_L \times (r_m - r_f), \quad \text{where } \beta_L = \beta_U \times \left[1 + (1-T_c) \times \frac{D}{E}\right]
 \end{equation}
 
-Using $r_f = 4.5\%$, $r_m - r_f = 5.5\%$, and $\beta_U = 0.9$ (sports entertainment industry), we model the cost of debt with a nonlinear credit spread:
-
+Using $r_f = 4.5\%$, $r_m - r_f = 5.5\%$, and $\beta_U = 0.9$, we model the cost of debt with a nonlinear credit spread:
 \begin{equation}
 r_d = r_{\text{base}} + 0.02 \times \left(\frac{D/V}{0.30}\right)^2
 \end{equation}
@@ -457,34 +426,32 @@ r_d = r_{\text{base}} + 0.02 \times \left(\frac{D/V}{0.30}\right)^2
 \caption{Capital Structure Analysis}
 \begin{tabular}{cccccl}
 \toprule
-\textbf{D/V} & \textbf{$r_e$} & \textbf{$r_d$} & \textbf{WACC} & \textbf{Interest Coverage} & \textbf{Assessment} \\
+\textbf{D/V} & \textbf{$r_e$} & \textbf{$r_d$} & \textbf{WACC} & \textbf{Int. Coverage} & \textbf{Assessment} \\
 \midrule
-0\% & 9.45\% & -- & 9.45\% & $\infty$ & Conservative, missed tax shield \\
+0\% & 9.45\% & -- & 9.45\% & $\infty$ & Conservative \\
 10\% & 9.72\% & 5.11\% & 9.13\% & 15.8x & Very safe \\
 20\% & 10.03\% & 5.44\% & 8.87\% & 7.4x & Safe, near-optimal \\
 \textbf{25\%} & \textbf{10.20\%} & \textbf{5.69\%} & \textbf{8.79\%} & \textbf{5.6x} & \textbf{Recommended} \\
-30\% & 10.40\% & 6.00\% & 8.76\% & 4.3x & Optimal WACC, moderate risk \\
+30\% & 10.40\% & 6.00\% & 8.76\% & 4.3x & Optimal WACC \\
 40\% & 10.85\% & 6.89\% & 8.82\% & 2.9x & Elevated risk \\
-50\% & 11.40\% & 8.22\% & 9.07\% & 2.0x & High risk \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Optimization over the feasible range $[0.05, 0.50]$ yields a theoretical optimal debt ratio of approximately 28-30\%. However, given CBA uncertainty, high asset appreciation expectations, and revenue volatility, we recommend a more conservative 20-25\% target with emphasis on revolving credit facilities rather than fixed-term debt to preserve financial flexibility.
+Given CBA uncertainty, we recommend a conservative 20-25\% target with emphasis on revolving credit facilities.
 
 \subsection{Dynamic Decision Engine}
 
-The core innovation of our system is a trigger-based decision framework that automatically identifies relevant conditions and recommends appropriate actions. The system monitors team state variables across four categories and activates corresponding decision rules.
+The core innovation is a trigger-based decision framework that monitors state variables and activates corresponding rules.
 
 \subsubsection{State Variable Monitoring}
 
 The decision engine continuously tracks:
-
 \begin{itemize}
-\item \textbf{Business State:} Revenue growth rate, sponsor renewal status, ticket sales velocity, merchandise trends
-\item \textbf{Basketball State:} Win percentage, games remaining, playoff probability, point differential
-\item \textbf{Player State:} Star player health, minutes load, injury history, fatigue indicators
-\item \textbf{External State:} CBA developments, expansion announcements, competitor moves, economic conditions
+\item \textbf{Business State:} Revenue growth rate, sponsor renewal status, ticket sales velocity
+\item \textbf{Basketball State:} Win percentage, games remaining, playoff probability
+\item \textbf{Player State:} Star player health, minutes load, injury history
+\item \textbf{External State:} CBA developments, expansion announcements, economic conditions
 \end{itemize}
 
 \subsubsection{Trigger Definition and Action Mapping}
@@ -502,10 +469,10 @@ Revenue Decline & Growth $<$ -10\% YoY & CRITICAL & Cut discretionary costs, del
 \midrule
 \multicolumn{4}{l}{\textit{Basketball Operations Triggers}} \\
 Playoff Push & Win\% $>$ 60\%, $<$15 games & HIGH & Activate trade budget, optimize rotation \\
-Lottery Bound & Win\% $<$ 35\%, $<$20 games & MEDIUM & Shift to development, trade veterans for picks \\
+Lottery Bound & Win\% $<$ 35\%, $<$20 games & MEDIUM & Shift to development, trade veterans \\
 \midrule
 \multicolumn{4}{l}{\textit{Injury/Load Triggers}} \\
-Star Injury (Major) & Injured $>$ 6 weeks & CRITICAL & File insurance, sign replacement, adjust pricing \\
+Star Injury & Injured $>$ 6 weeks & CRITICAL & File insurance, sign replacement, adjust pricing \\
 Star Overwork & MPG $>$ 34, healthy & HIGH & Implement load management, develop depth \\
 \midrule
 \multicolumn{4}{l}{\textit{External Triggers}} \\
@@ -517,68 +484,32 @@ CBA Change & New CBA announced & CRITICAL & Recalculate all values, full strateg
 
 \subsubsection{Leverage Adjustment Protocol}
 
-For each trigger, the system specifies corresponding leverage adjustments:
-
 \begin{equation}
 \Delta(D/V) = f(\text{Trigger}, \text{Current State}, \text{Market Conditions})
 \end{equation}
 
-General principles:
-\begin{itemize}
-\item \textbf{Revenue surge:} Increase debt capacity by 5-10\% to fund growth investments
-\item \textbf{Revenue decline:} Reduce debt by 10-15\%, preserve cash for flexibility
-\item \textbf{Playoff contention:} Short-term debt acceptable for player acquisition (1-year horizon)
-\item \textbf{Star injury:} Use insurance proceeds, maintain structure pending recovery timeline
-\item \textbf{CBA uncertainty:} Reduce fixed obligations, maximize revolving capacity
-\end{itemize}
+General principles: Revenue surge increases debt capacity by 5-10\%; revenue decline reduces debt by 10-15\%; playoff contention allows short-term debt for acquisitions; star injury uses insurance proceeds; CBA uncertainty maximizes revolving capacity.
 
 \subsection{Implementation Timeline}
 
-The decision system operates across three temporal horizons:
+\textbf{Immediate Actions (Pre-2025 Season):} Finalize dynamic pricing system; sign veteran rim protector; execute sponsor renewals with 3-year terms; purchase key player injury insurance (\$18M); establish \$50M revolving credit facility.
 
-\textbf{Immediate Actions (Pre-2025 Season, by April):}
-\begin{itemize}
-\item Finalize dynamic pricing system implementation
-\item Sign veteran rim protector (target: defensive BPM $>$ 2.0)
-\item Execute sponsor renewals with 3-year terms and territorial exclusivity
-\item Purchase key player injury insurance (coverage: \$18M)
-\item Establish \$50M revolving credit facility
-\end{itemize}
+\textbf{In-Season Actions (May-September 2025):} Target 27+ wins, top-4 seed; implement Clark load management (32 min/game cap); monitor triggers weekly; evaluate trade deadline opportunities.
 
-\textbf{In-Season Actions (May-September 2025):}
-\begin{itemize}
-\item Target 27+ wins, top-4 playoff seed
-\item Implement Clark load management protocol (32 min/game cap, rest on back-to-backs)
-\item Monitor trigger conditions weekly, adjust as needed
-\item Evaluate trade deadline opportunities based on standings and roster gaps
-\end{itemize}
-
-\textbf{Long-Term Actions (2026+):}
-\begin{itemize}
-\item Begin Caitlin Clark contract extension discussions (before FA eligibility)
-\item Commission arena upgrade/new construction feasibility study
-\item Prepare for new CBA salary structure implementation
-\item Develop next generation of marketable players through draft and development
-\end{itemize}
-
-%================================================================================
-% 第四部分：球员获取策略 (Task 2)
-%================================================================================
+\textbf{Long-Term Actions (2026+):} Begin Clark contract extension discussions; commission arena feasibility study; prepare for new CBA; develop next generation players.
 
 \section{Player Acquisition Strategy}
 
-This section addresses Task 2: developing a strategy to acquire players using standard league practices including draft, free agency, and trades. We formulate roster construction as a constrained optimization problem that maximizes total team value under salary cap and roster composition requirements.
+This section addresses Task 2: developing a strategy to acquire players using standard league practices.
 
 \subsection{Roster Optimization Model}
 
 \subsubsection{Mathematical Formulation}
 
-The roster optimization problem is formulated as a mixed-integer linear program (MILP). Let $x_i \in \{0,1\}$ indicate whether player $i$ is on the roster, $V_i$ denote player $i$'s total value (from Model A), and $S_i$ represent their salary:
-
+The roster optimization problem is formulated as a mixed-integer linear program (MILP). Let $x_i \in \{0,1\}$ indicate whether player $i$ is on the roster:
 \begin{equation}
 \text{maximize } \sum_{i \in \mathcal{P}} V_i \times x_i
 \end{equation}
-
 subject to:
 \begin{align}
 &\text{Salary Cap: } \sum_{i \in \mathcal{P}} S_i \times x_i \leq \text{Cap} = \$1,400,000 \\
@@ -589,25 +520,17 @@ subject to:
 &\text{Core Retention: } x_i = 1 \text{ for } i \in \{\text{Clark, Boston, Mitchell}\}
 \end{align}
 
-where $\mathcal{P}$ is the set of all available players, and $\mathcal{G}$, $\mathcal{F}$, $\mathcal{C}$ are position subsets.
-
 \subsubsection{Surplus Value Analysis}
 
-For each player, we calculate surplus value as the difference between total value and salary:
-
+For each player, surplus value is:
 \begin{equation}
 \text{Surplus}_i = V_{\text{total},i} - S_i
 \end{equation}
+Players with high positive surplus represent strong value acquisitions.
 
-Players with high positive surplus represent strong value acquisitions; those with negative surplus may warrant trade consideration unless strategic factors (leadership, chemistry, commercial appeal) justify retention.
-
-\subsection{Player Potential Projection Model}
-
-For contract valuation and acquisition decisions, we project future player value using an age-performance curve that varies by position.
+\subsection{Player Potential Projection Model (Model F)}
 
 \subsubsection{Age Adjustment Factor}
-
-The age adjustment factor $f(\text{age})$ captures the typical career trajectory:
 
 \begin{equation}
 f(\text{age}) = \begin{cases}
@@ -617,11 +540,7 @@ f(\text{age}) = \begin{cases}
 \end{cases}
 \end{equation}
 
-Peak performance occurs at ages 27-29 for guards and 26-28 for forwards/centers, with position-specific decline rates.
-
 \subsubsection{Injury Risk Adjustment}
-
-An injury risk factor further adjusts projections:
 
 \begin{equation}
 r_{\text{injury}}(\text{age}, \text{history}, \text{MPG}) = 1 - \left[0.05 + 0.01 \times \max(0, \text{age}-28) + 0.03 \times N_{\text{injuries}} + 0.01 \times \max(0, \text{MPG}-32)\right]
@@ -629,48 +548,18 @@ r_{\text{injury}}(\text{age}, \text{history}, \text{MPG}) = 1 - \left[0.05 + 0.0
 
 \subsubsection{Contract NPV Calculation}
 
-The contract Net Present Value (NPV) discounts projected annual values:
-
 \begin{equation}
 \text{NPV} = \sum_{t=1}^{T} \frac{V_{\text{projected}}(t) \times f(\text{age}_t) \times r_{\text{injury}}(t)}{(1+r)^t}
 \end{equation}
-
-where $r = 8\%$ reflects opportunity cost of capital and uncertainty premium.
+where $r = 8\%$ reflects opportunity cost and uncertainty premium.
 
 \subsection{Recommended Acquisition Strategy}
 
-Based on our optimization model, roster analysis, and identified gaps, we recommend the following strategic priorities for the 2025 season:
+\textbf{Priority 1: Veteran Interior Defender.} The Fever's defensive rating (105.2, 9th in WNBA) indicates clear need for rim protection. Target profile: experienced center, defensive BPM $>$ 2.0, blocks $>$ 1.5/game. Projected cost: \$150K-\$200K. Expected contribution: 1.5-2.0 WAR.
 
-\textbf{Priority 1: Veteran Interior Defender}
+\textbf{Priority 2: Depth Guard.} To enable Clark load management, acquire backup point guard. Target profile: AST/TO ratio $>$ 2.0, 3P\% $>$ 35\%. Budget: \$75K-\$100K. Expected contribution: 0.5-1.0 WAR.
 
-The Fever's defensive rating (105.2, 9th in WNBA) indicates a clear need for rim protection. Clark's offensive brilliance is partially offset by defensive vulnerabilities that a strong interior presence can mitigate.
-
-\begin{itemize}
-\item Target profile: Experienced center, defensive BPM $>$ 2.0, blocks $>$ 1.5 per game
-\item Projected cost: \$150,000-\$200,000
-\item Expected contribution: 1.5-2.0 WAR, significant defensive impact
-\item Free agent targets: Players with playoff experience and defensive reputation
-\end{itemize}
-
-\textbf{Priority 2: Depth Guard}
-
-To enable Clark load management without sacrificing competitiveness, acquire a backup point guard capable of running the offense.
-
-\begin{itemize}
-\item Target profile: AST/TO ratio $>$ 2.0, 3P\% $>$ 35\%, can play 15-20 minutes
-\item Budget allocation: \$75,000-\$100,000
-\item Expected contribution: 0.5-1.0 WAR, enables star rest
-\end{itemize}
-
-\textbf{Priority 3: Draft Strategy}
-
-With the projected 8th overall pick (based on first-round playoff exit), target the best available talent emphasizing defensive versatility.
-
-\begin{itemize}
-\item Historical expectation: 8th pick yields approximately 0.9 WAR at rookie salary ($\sim$\$76,000)
-\item Surplus value: $0.9 \times \$300,000 - \$76,000 = \$194,000$
-\item Draft philosophy: Best Player Available (BPA) with defensive tiebreaker
-\end{itemize}
+\textbf{Priority 3: Draft Strategy.} With projected 8th overall pick, historical expectation yields $\sim$0.9 WAR at rookie salary (\$76K). Surplus value: $0.9 \times \$300K - \$76K = \$194K$.
 
 \begin{table}[H]
 \centering
@@ -696,119 +585,56 @@ Depth (4 players) & Var. & -- & 361 & 0.35 & Min contracts \\
 
 \subsection{Trade Evaluation Framework}
 
-All potential trades are evaluated using a comprehensive value delta analysis:
-
+All potential trades are evaluated using:
 \begin{equation}
 \Delta V_{\text{trade}} = \sum_{i \in \text{incoming}} V_i - \sum_{j \in \text{outgoing}} V_j
 \end{equation}
 
-A trade is recommended when:
-\begin{enumerate}
-\item $\Delta V > 0$ (positive value gain)
-\item Resulting roster remains salary cap compliant
-\item Position balance is maintained
-\item Strategic fit considerations are satisfied (timeline alignment, chemistry)
-\end{enumerate}
+A trade is recommended when: (1) $\Delta V > 0$; (2) roster remains cap compliant; (3) position balance maintained; (4) strategic fit satisfied.
 
-\textbf{Trade Deadline Protocol:}
+\subsection{Strengths and Weaknesses}
 
-If at trade deadline (approximately 20 games into season) the Fever are:
-\begin{itemize}
-\item \textbf{Top-4 seed (playoff push):} Authorized to acquire rental players with expiring contracts, accept modest negative $\Delta V$ for championship probability increase
-\item \textbf{5th-8th seed (bubble):} Evaluate whether push or sell maximizes expected value
-\item \textbf{Below playoff line:} Sell veterans with positive value for future assets (picks, young players)
-\end{itemize}
+\textbf{Strengths:} Preserves core young talent with high upside; addresses clear roster weakness without overpaying; maintains salary cap flexibility; rookie contracts provide surplus value; load management capability protects franchise asset.
 
-\subsection{Strengths and Weaknesses of Acquisition Strategy}
-
-\textbf{Strengths:}
-\begin{itemize}
-\item Preserves core young talent with high upside
-\item Addresses clear roster weakness (interior defense) without overpaying
-\item Maintains salary cap flexibility for future moves
-\item Rookie contracts provide surplus value
-\item Load management capability protects franchise asset
-\end{itemize}
-
-\textbf{Weaknesses:}
-\begin{itemize}
-\item Heavy reliance on free agent market for key positions
-\item Draft pick uncertainty (BPA may not address specific needs)
-\item Limited trade assets to acquire established stars
-\item Single-year competitive window if key additions underperform
-\item Depth concerns if injuries affect multiple rotation players
-\end{itemize}
-
-\textbf{Risk Mitigation:}
-\begin{itemize}
-\item Pursue multiple free agent targets to ensure backup options
-\item Structure contracts with team options for flexibility
-\item Maintain 2-way player slots for emergency depth
-\item Build relationships with agents for mid-season market access
-\end{itemize}
-
-%================================================================================
-% 第五部分：联盟扩张影响分析 (Task 3)
-%================================================================================
+\textbf{Weaknesses:} Heavy reliance on free agent market; draft pick uncertainty; limited trade assets for established stars; single-year competitive window if additions underperform; depth concerns if multiple injuries.
 
 \section{League Expansion Impact Analysis}
 
-The WNBA is undergoing significant expansion, with Golden State Valkyries confirmed for 2025 and Toronto Sceptres for 2026. This section develops a comprehensive geographic competition model to analyze how expansion affects the Indiana Fever's market position, revenue streams, and strategic options.
+The WNBA is undergoing significant expansion, with Golden State Valkyries confirmed for 2025 and Toronto Sceptres for 2026.
 
-\subsection{Geographic Competition Model}
+\subsection{Geographic Competition Model (Model G)}
 
 \subsubsection{Theoretical Foundation}
 
-We model market competition using a gravity-based overlap function inspired by spatial interaction theory. The fundamental insight is that competitive intensity between franchises decreases with geographic distance following an exponential decay pattern, analogous to retail trade area models.
+We model market competition using a gravity-based overlap function. Competitive intensity between franchises decreases with geographic distance following an exponential decay pattern.
 
 \subsubsection{Market Overlap Formulation}
 
-The market overlap between an incumbent team $i$ (Indiana Fever) and a potential expansion team $j$ is given by:
-
 \begin{equation}
 \text{Overlap}_{ij} = \frac{\min(\text{Pop}_i, \text{Pop}_j)}{\text{Pop}_i} \times e^{-\gamma \times d_{ij}}
-\label{eq:overlap}
 \end{equation}
 
-where:
-\begin{itemize}
-    \item $\text{Pop}_i$ = Market population of incumbent team $i$ (in millions)
-    \item $\text{Pop}_j$ = Market population of expansion team $j$ (in millions)
-    \item $d_{ij}$ = Haversine distance between cities $i$ and $j$ (in kilometers)
-    \item $\gamma$ = Distance decay coefficient ($\approx 0.003$ km$^{-1}$)
-\end{itemize}
-
-The distance decay parameter $\gamma = 0.003$ implies that competitive overlap decreases by approximately 26\% for every 100 km of separation, calibrated from historical WNBA and NBA attendance patterns showing how fan base allegiance varies with proximity to alternative teams.
+where $\text{Pop}_i, \text{Pop}_j$ are market populations (millions), $d_{ij}$ is Haversine distance (km), and $\gamma = 0.003$ km$^{-1}$ (26\% decrease per 100km separation).
 
 \subsubsection{Haversine Distance Calculation}
-
-Geographic distances are computed using the Haversine formula for great-circle distance:
 
 \begin{equation}
 d_{ij} = 2R \cdot \arctan2\left(\sqrt{a}, \sqrt{1-a}\right)
 \end{equation}
-
 where:
 \begin{equation}
 a = \sin^2\left(\frac{\Delta\phi}{2}\right) + \cos(\phi_i) \cdot \cos(\phi_j) \cdot \sin^2\left(\frac{\Delta\lambda}{2}\right)
 \end{equation}
-
-with $R = 6371$ km (Earth's mean radius), and $(\phi, \lambda)$ representing latitude and longitude coordinates of each city.
+with $R = 6371$ km (Earth's mean radius).
 
 \subsubsection{Revenue Impact Estimation}
 
-The projected revenue impact from a new expansion team is computed as:
-
 \begin{equation}
 \Delta R_i = -R_{\text{base}} \times \text{Overlap}_{ij} \times \alpha_{\text{impact}}
-\label{eq:revenue_impact}
 \end{equation}
-
-where $\alpha_{\text{impact}} = 0.15$ represents the revenue sensitivity coefficient. This parameter indicates that a 100\% market overlap (hypothetically, two teams in the same city) would result in approximately 15\% revenue loss for the incumbent team, accounting for fan base dilution, sponsor competition, and media market fragmentation.
+where $\alpha_{\text{impact}} = 0.15$ indicates 15\% revenue loss at 100\% market overlap.
 
 \subsection{Threat Classification System}
-
-We classify expansion threats based on distance from Indianapolis to enable strategic prioritization:
 
 \begin{table}[H]
 \centering
@@ -819,7 +645,7 @@ We classify expansion threats based on distance from Indianapolis to enable stra
 \midrule
 CRITICAL & $< 200$ & $> 0.50$ & Aggressive market defense required \\
 HIGH & $200-400$ & $0.30-0.50$ & Proactive sponsor protection \\
-MODERATE & $400-700$ & $0.15-0.30$ & Monitor and potential rivalry marketing \\
+MODERATE & $400-700$ & $0.15-0.30$ & Monitor and rivalry marketing \\
 LOW & $> 700$ & $< 0.15$ & Minimal direct competition \\
 \bottomrule
 \end{tabular}
@@ -827,12 +653,9 @@ LOW & $> 700$ & $< 0.15$ & Minimal direct competition \\
 
 \subsection{Quantitative Impact Assessment}
 
-Table \ref{tab:expansion_impact} presents the calculated revenue impact for all potential expansion cities, including both confirmed and speculative locations.
-
 \begin{table}[H]
 \centering
 \caption{Expansion City Impact Analysis for Indiana Fever}
-\label{tab:expansion_impact}
 \begin{tabular}{lccccl}
 \toprule
 \textbf{City} & \textbf{Dist. (mi)} & \textbf{Pop. (M)} & \textbf{Overlap} & \textbf{Rev. Impact} & \textbf{Status} \\
@@ -842,57 +665,25 @@ Cleveland & 265 & 2.1 & 0.523 & $-5.2\%$ & Potential \\
 Detroit & 238 & 4.4 & 0.489 & $-4.8\%$ & Potential \\
 St. Louis & 242 & 2.8 & 0.412 & $-4.1\%$ & Potential \\
 Nashville & 287 & 2.0 & 0.356 & $-3.5\%$ & Potential \\
-Chicago & 183 & 9.5 & 0.485 & $-3.8\%$ & Existing \\
-Kansas City & 449 & 2.2 & 0.298 & $-2.9\%$ & Potential \\
 Toronto & 510 & 6.3 & 0.187 & $-1.1\%$ & Confirmed 2026 \\
 Golden State & 2,139 & 4.7 & 0.045 & $-0.4\%$ & Confirmed 2025 \\
 Miami & 1,100 & 6.2 & 0.089 & $-0.7\%$ & Potential \\
 Denver & 1,029 & 2.9 & 0.076 & $-0.6\%$ & Potential \\
-Portland & 2,183 & 2.5 & 0.012 & $-0.1\%$ & Potential \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Strategic Response Recommendations}
 
-\subsubsection{Confirmed Expansions (2025-2026)}
+\textbf{Confirmed Expansions:} Golden State (2,139 mi) poses negligible threat ($<0.5\%$ impact); Toronto (510 mi) represents moderate concern ($-1.1\%$ impact) but cross-border complications limit direct fan migration.
 
-\textbf{Golden State Valkyries (2025):} At 2,139 miles, the West Coast location poses negligible competitive threat ($<0.5\%$ revenue impact). The primary strategic implication is positive: increased league-wide revenue from a premium media market will boost national broadcast revenue sharing for all franchises including Indiana.
+\textbf{High-Risk Scenarios:}
 
-\textbf{Toronto Sceptres (2026):} At 510 miles with a $-1.1\%$ projected impact, Toronto represents moderate concern. However, cross-border complications (currency, travel logistics, different broadcast markets) limit direct fan migration. We recommend exploring joint marketing opportunities for Canada-adjacent fan engagement and rivalry development.
+\textbf{Cincinnati (CRITICAL - 112 miles):} Projected $-8.5\%$ revenue impact. Immediate actions: lock multi-year sponsor agreements (3+ years); increase grassroots programs in southern Indiana and northern Kentucky; advocate for alternative expansion locations; strengthen season ticket holder loyalty programs.
 
-\subsubsection{High-Risk Expansion Scenarios}
-
-For potential Midwest expansions, we recommend the following defensive strategies:
-
-\textbf{Cincinnati (CRITICAL - 112 miles):} This represents the most threatening scenario with projected $-8.5\%$ revenue impact. Immediate actions should include:
-\begin{itemize}
-\item Locking in multi-year sponsor agreements (3+ years) before any expansion announcement
-\item Increasing grassroots basketball programs in southern Indiana and northern Kentucky
-\item Advocating through league governance channels for alternative expansion locations
-\item Strengthening season ticket holder loyalty programs with price guarantees
-\end{itemize}
-
-\textbf{Cleveland/Detroit (HIGH):} These cities pose significant but manageable threats ($-4.8\%$ to $-5.2\%$). Recommended responses:
-\begin{itemize}
-\item Secure regional corporate partners with territorial exclusivity clauses
-\item Implement enhanced season ticket holder benefits
-\item Emphasize Caitlin Clark as a unique, irreplaceable market differentiator
-\end{itemize}
-
-\subsubsection{Optimal Expansion Advocacy}
-
-From Indiana Fever's perspective, we can quantify the benefit-to-harm ratio for each potential expansion location:
-
-\begin{equation}
-\text{Benefit Score}_j = \frac{\text{League Revenue Contribution}_j}{\text{Revenue Impact}_{\text{IND},j}}
-\end{equation}
-
-Rankings by benefit score favor coastal and southern markets: Portland ($++$), Miami ($+$), Denver ($+$), Toronto (neutral), while all Midwest cities rank negatively ($-$ to $--$). The Fever should actively lobby for expansion priorities that maximize league-wide growth while minimizing geographic encroachment.
+\textbf{Cleveland/Detroit (HIGH):} $-4.8\%$ to $-5.2\%$ impact. Recommended responses: secure regional partners with territorial exclusivity; implement enhanced season ticket benefits; emphasize Clark as unique market differentiator.
 
 \subsection{Scenario Modeling: Cincinnati Expansion}
-
-To illustrate our model's application, we project detailed financial impact under a Cincinnati expansion scenario for the 2027 season:
 
 \begin{table}[H]
 \centering
@@ -913,76 +704,30 @@ National Revenue Share & \$5.0M & \$5.4M ($+8.0\%$) \\
 \end{tabular}
 \end{table}
 
-This analysis underscores the importance of proactive market defense strategies before any nearby expansion announcement.
-
-%================================================================================
-% 第六部分：动态票价优化策略 (Task 4)
-%================================================================================
-
 \section{Dynamic Ticket Pricing Strategy}
 
-This section addresses the additional business decision (Task 4) of optimizing ticket pricing strategy over the season. We develop a comprehensive dynamic pricing model that balances revenue maximization with long-term fan engagement and brand equity considerations.
+This section addresses the additional business decision (Task 4) of optimizing ticket pricing strategy.
 
 \subsection{Demand Function Estimation}
 
-\subsubsection{Linear Demand Model}
-
-Based on 2024 attendance data from Gainbridge Fieldhouse (capacity: 17,274), we estimate a linear demand function relating ticket price to quantity demanded:
-
+Based on 2024 attendance data from Gainbridge Fieldhouse (capacity: 17,274), we estimate:
 \begin{equation}
 Q(P) = a - b \cdot P
-\label{eq:demand}
 \end{equation}
+where $a = 25,000$ (maximum potential demand) and $b = 100$ (price sensitivity coefficient).
 
-where:
-\begin{itemize}
-    \item $Q(P)$ = Quantity demanded (attendance) at price $P$
-    \item $a = 25,000$ = Maximum potential demand (intercept), representing latent demand exceeding physical capacity
-    \item $b = 100$ = Price sensitivity coefficient (fans per dollar)
-\end{itemize}
-
-The parameters are calibrated using ordinary least squares regression on observed attendance-price pairs from the 2024 season:
-
+For unconstrained optimization:
 \begin{equation}
-\hat{b} = \frac{\sum_{g=1}^{n}(P_g - \bar{P})(Q_g - \bar{Q})}{\sum_{g=1}^{n}(P_g - \bar{P})^2}
+\frac{dR}{dP} = a - 2bP = 0 \implies P^* = \frac{a}{2b} = \frac{25,000}{200} = \$125
 \end{equation}
-
-Analysis of 2024 data yields $\hat{b} \approx 98.5$, which we round to 100 for model tractability.
-
-\subsubsection{Revenue Maximization Under Unconstrained Demand}
-
-For unconstrained optimization, total revenue is:
-
-\begin{equation}
-R(P) = P \cdot Q(P) = P(a - bP) = aP - bP^2
-\end{equation}
-
-Taking the first-order condition:
-
-\begin{equation}
-\frac{dR}{dP} = a - 2bP = 0 \implies P^* = \frac{a}{2b}
-\end{equation}
-
-Substituting our parameter estimates:
-
-\begin{equation}
-P^* = \frac{25,000}{2 \times 100} = \$125
-\end{equation}
-
-This theoretical optimum serves as a baseline but must be adjusted for capacity constraints ($C = 17,274$) and context-specific demand shifters.
 
 \subsection{Multi-Factor Dynamic Pricing Model}
 
-\subsubsection{Price Multiplier Framework}
-
-We implement a multiplicative pricing model that adjusts base prices according to observable demand factors:
-
+We implement a multiplicative pricing model:
 \begin{equation}
 P^*_g = P_{\text{base}} \times \prod_{k=1}^{K} m_k(x_{kg})
-\label{eq:dynamic_price}
 \end{equation}
-
-where $P_{\text{base}} = \$85$ is the baseline ticket price (2024 season average) and $m_k$ represent context-specific multipliers for game $g$.
+where $P_{\text{base}} = \$85$ is baseline price.
 
 \begin{table}[H]
 \centering
@@ -1000,7 +745,7 @@ where $P_{\text{base}} = \$85$ is the baseline ticket price (2024 season average
 & Thursday & 1.00 & Baseline \\
 & Monday-Wednesday & 0.90-0.95 & Lower accessibility \\
 \midrule
-\multirow{2}{*}{Star Status} & Clark Playing & 1.30 & Star attraction premium \\
+\multirow{2}{*}{Star Status} & Clark Playing & 1.30 & Star attraction \\
 & Clark Not Playing & 0.75 & Reduced demand \\
 \midrule
 \multirow{2}{*}{Purchase Timing} & $<2$ weeks to game & 1.05-1.10 & Urgency premium \\
@@ -1009,20 +754,13 @@ where $P_{\text{base}} = \$85$ is the baseline ticket price (2024 season average
 \end{tabular}
 \end{table}
 
-\subsubsection{Example Calculation}
-
-For a Saturday evening game against the Chicago Sky with Clark playing, purchased 1 week before:
-
-\begin{align}
-P^*_g &= \$85 \times 1.40 \times 1.20 \times 1.30 \times 1.05 \\
-&= \$85 \times 2.29 = \$195
-\end{align}
-
-After applying a price ceiling constraint of \$200 (to prevent fan perception of price gouging), the recommended price is \$186.
+\textbf{Example Calculation:} Saturday vs. Chicago Sky with Clark playing, purchased 1 week before:
+\begin{equation}
+P^*_g = \$85 \times 1.40 \times 1.20 \times 1.30 \times 1.05 = \$85 \times 2.29 = \$195
+\end{equation}
+After applying \$200 price ceiling: recommended price is \$186.
 
 \subsection{Pricing Strategy Comparison}
-
-We compare three pricing strategies across the 20-game home schedule:
 
 \begin{table}[H]
 \centering
@@ -1038,119 +776,49 @@ Dynamic (Full Model) & \$103.20 & \$35.6M & Baseline \\
 \end{tabular}
 \end{table}
 
-The dynamic pricing model generates an additional \$6.2M in ticket revenue compared to fixed pricing, representing a 21.1\% improvement without significant capacity utilization decline.
-
-\subsection{Sample Game Pricing Analysis}
-
-\begin{table}[H]
-\centering
-\caption{Sample Game Pricing Analysis (2025 Season)}
-\begin{tabular}{lcccccc}
-\toprule
-\textbf{Opponent} & \textbf{Day} & \textbf{$m_{\text{opp}}$} & \textbf{$m_{\text{day}}$} & \textbf{Opt. Price} & \textbf{Proj. Att.} & \textbf{Rev. (\$K)} \\
-\midrule
-Las Vegas Aces & Saturday & 1.40 & 1.20 & \$186 & 17,274 & 3,213 \\
-Chicago Sky & Friday & 1.40 & 1.15 & \$178 & 17,274 & 3,075 \\
-New York Liberty & Sunday & 1.40 & 1.15 & \$178 & 17,274 & 3,075 \\
-Phoenix Mercury & Tuesday & 1.20 & 0.95 & \$126 & 17,100 & 2,155 \\
-Connecticut Sun & Thursday & 1.20 & 1.00 & \$133 & 17,274 & 2,297 \\
-Seattle Storm & Saturday & 1.20 & 1.20 & \$159 & 17,274 & 2,747 \\
-Minnesota Lynx & Wednesday & 1.05 & 0.92 & \$107 & 16,800 & 1,798 \\
-Dallas Wings & Monday & 1.00 & 0.90 & \$100 & 16,500 & 1,650 \\
-\bottomrule
-\end{tabular}
-\end{table}
+The dynamic pricing model generates an additional \$6.2M in ticket revenue compared to fixed pricing, representing a 21.1\% improvement.
 
 \subsection{Implementation Recommendations}
 
-\textbf{Phased Rollout:} We recommend beginning with tiered pricing in 2025 to acclimate the fan base, transitioning to full dynamic pricing by 2026 after system calibration and market acceptance.
+\textbf{Phased Rollout:} Begin with tiered pricing in 2025, transition to full dynamic pricing by 2026.
 
-\textbf{Price Floor Protection:} Maintain a minimum ticket price of \$50 across all games to preserve brand positioning and ensure accessibility for lower-income fans, supporting long-term fan development.
+\textbf{Price Floor/Ceiling:} Minimum \$50 (accessibility); maximum \$200 (goodwill preservation).
 
-\textbf{Price Ceiling:} Cap maximum prices at \$200 to avoid perception of price gouging and maintain goodwill, even when demand would support higher prices.
+\textbf{Season Ticket Holders:} 20\% discount relative to dynamic single-game prices.
 
-\textbf{Season Ticket Holder Benefits:} Guarantee season ticket holders a 20\% discount relative to dynamic single-game prices, incentivizing multi-year commitments and providing revenue stability.
-
-\textbf{Load Management Communication:} When Clark rests (projected 5-6 games), proactively communicate to single-game ticket holders with upgrade/exchange options to maintain customer satisfaction and repeat purchase probability.
-
-\subsection{Sensitivity to Star Availability}
-
-The pricing model's star availability multiplier ($\times 0.75$ without Clark) reflects significant demand elasticity. We estimate the following revenue impact from Clark rest days:
-
-\begin{equation}
-\Delta R_{\text{rest}} = (P_{\text{Clark}} - P_{\text{no-Clark}}) \times A_{\text{avg}} \times N_{\text{rest}}
-\end{equation}
-
-For 5 rest games: $\Delta R = (\$140 - \$105) \times 16,500 \times 5 = \$2.89M$ foregone revenue. However, this is offset by reduced injury risk valued at approximately \$6-10M in expected value terms (see Section 7), yielding a net positive expected value for load management.
-
-%================================================================================
-% 第七部分：伤病管理与风险应对 (Task 5)
-%================================================================================
+\textbf{Load Management Communication:} Announce Clark rest 48+ hours in advance with exchange options.
 
 \section{Key Player Injury Management Model}
 
-Given the Indiana Fever's extreme financial dependence on Caitlin Clark (contributing approximately 78\% of commercial value), robust injury risk management represents a strategic imperative rather than merely an operational concern. This section develops a comprehensive framework for injury probability estimation, financial impact quantification, and contingency planning.
+Given the Fever's extreme financial dependence on Caitlin Clark ($\sim$78\% of commercial value), robust injury risk management is a strategic imperative.
 
 \subsection{Injury Risk Quantification}
 
 \subsubsection{Probability Model}
 
-We model the season injury probability as a function of workload factors using a logistic-inspired additive model:
-
 \begin{equation}
 P(\text{injury}) = P_{\text{base}} + \beta_1 \cdot \max(0, \text{MPG} - \tau) + \beta_2 \cdot \frac{G}{40} + \beta_3 \cdot \mathbb{1}_{\text{rest} < 2}
-\label{eq:injury_prob}
 \end{equation}
-
-where:
-\begin{itemize}
-    \item $P_{\text{base}} = 0.05$ (5\% baseline major injury rate for WNBA players)
-    \item $\beta_1 = 0.008$ (per-minute risk above fatigue threshold)
-    \item $\tau = 32$ minutes (fatigue threshold beyond which injury risk escalates)
-    \item $\beta_2 = 0.02$ (cumulative season fatigue factor)
-    \item $\beta_3 = 0.02$ (insufficient rest penalty for back-to-backs)
-    \item $G$ = games played in season
-    \item $\text{MPG}$ = minutes per game
-\end{itemize}
-
-The parameters are calibrated from historical WNBA injury data (2019-2024) using maximum likelihood estimation on player-season observations.
+where $P_{\text{base}} = 0.05$, $\beta_1 = 0.008$, $\tau = 32$ minutes, $\beta_2 = 0.02$, $\beta_3 = 0.02$.
 
 \subsubsection{Clark-Specific Risk Assessment}
 
-For Caitlin Clark (2024 season: 35.5 MPG, 40 games played, adequate rest days):
-
-\begin{align}
-P(\text{injury}) &= 0.05 + 0.008 \times (35.5 - 32) + 0.02 \times \frac{40}{40} + 0 \\
-&= 0.05 + 0.028 + 0.02 = 0.098 \approx 9.8\%
-\end{align}
-
-This elevated risk profile---nearly double the baseline---necessitates proactive load management protocols. Under our recommended 32-minute cap:
-
+For Caitlin Clark (2024: 35.5 MPG, 40 games):
 \begin{equation}
-P(\text{injury})_{\text{managed}} = 0.05 + 0 + 0.02 = 0.07 = 7.0\%
+P(\text{injury}) = 0.05 + 0.008 \times (35.5 - 32) + 0.02 \times 1 = 0.05 + 0.028 + 0.02 = 9.8\%
 \end{equation}
 
+Under recommended 32-minute cap:
+\begin{equation}
+P(\text{injury})_{\text{managed}} = 0.05 + 0 + 0.02 = 7.0\%
+\end{equation}
 This represents a 28.6\% relative risk reduction.
 
 \subsection{Financial Impact Analysis}
 
-\subsubsection{Revenue Loss Decomposition}
-
-The total financial impact of a Clark injury can be decomposed into direct and indirect components:
-
 \begin{equation}
 \text{Total Impact} = \underbrace{R_{\text{weekly}} \times T}_{\text{Direct Loss}} + \underbrace{V_{\text{commercial}} \times (\alpha_{\text{att}} + \alpha_{\text{sponsor}})}_{\text{Indirect Loss}}
 \end{equation}
-
-where:
-\begin{itemize}
-    \item $R_{\text{weekly}}$ = Weekly revenue attributable to Clark's play ($\sim$\$1.5M)
-    \item $T$ = Duration of absence in weeks
-    \item $\alpha_{\text{att}} = 0.25$ (attendance decline coefficient during absence)
-    \item $\alpha_{\text{sponsor}} = 0.10$ (sponsorship impact coefficient for season-affecting injuries)
-\end{itemize}
-
-\subsubsection{Impact by Injury Severity}
 
 \begin{table}[H]
 \centering
@@ -1162,24 +830,17 @@ where:
 Minor (contusion, strain) & 1-2 weeks & 3-4 & \$1.5M & \$2.2M \\
 Moderate (sprain, tear I-II) & 3-6 weeks & 6-12 & \$4.5M & \$7.8M \\
 Major (fracture, ligament) & 6-10 weeks & 12-20 & \$8.5M & \$15.5M \\
-Season-Ending (ACL, etc.) & 10+ weeks & 20+ & \$12.0M & \$22.0M \\
+Season-Ending (ACL) & 10+ weeks & 20+ & \$12.0M & \$22.0M \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The asymmetry between direct loss and total impact reflects the cascading effects on attendance, merchandise sales, and sponsor confidence that extend beyond the injury duration.
-
 \subsection{Load Management Protocol}
 
-\subsubsection{Minutes Management Framework}
-
-Based on risk-benefit analysis, we recommend the following load management protocol:
-
+Target MPG formula:
 \begin{equation}
 \text{Target MPG} = \min\left(32, \text{Current MPG} - 0.5 \times \frac{G}{10}\right)
 \end{equation}
-
-This formula implements progressive rest as the season advances, recognizing cumulative fatigue effects.
 
 \begin{table}[H]
 \centering
@@ -1195,88 +856,35 @@ $<33$ & LOW (Green) & Maintain & Standard rotation protocols \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Back-to-Back Game Protocol}
-
-The 2025 WNBA schedule includes approximately 10 back-to-back situations for the Fever. We recommend:
-
-\begin{itemize}
-\item \textbf{Rest Protocol:} Clark sits out the second game of every third back-to-back (projected 3-4 rest games)
-\item \textbf{Minutes Cap:} In played back-to-back games, hard cap of 28 minutes
-\item \textbf{Communication:} Announce rest decisions 48+ hours in advance to allow ticket holder adjustments
-\end{itemize}
-
 \subsection{Insurance and Contingency Planning}
 
-\subsubsection{Key Person Insurance Recommendation}
-
-We recommend purchasing key person disability insurance for Caitlin Clark with coverage calculated as:
-
+\textbf{Coverage Recommendation:}
 \begin{equation}
 \text{Coverage} = V_{\text{commercial}} \times 1.2 = \$15.2M \times 1.2 = \$18.24M
 \end{equation}
 
-At a 3\% premium rate (standard for young professional athletes), annual cost = \$547,200. Expected value analysis:
-
+At 3\% premium rate: annual cost = \$547,200. Expected value:
 \begin{equation}
 \text{Net Benefit} = P(\text{injury}) \times \text{Avg. Loss} - \text{Premium} = 0.10 \times \$12M - \$0.55M = +\$0.65M
 \end{equation}
 
-\textbf{Recommendation: PURCHASE.} Insurance provides positive expected value protection and significantly reduces tail risk exposure.
-
-\subsubsection{Contingency Response Protocol}
-
-We specify a tiered response protocol activated upon injury occurrence:
-
-\textbf{Immediate Response (0-24 hours):}
-\begin{itemize}
-\item File insurance claim documentation
-\item Internal communication to coaching staff, front office
-\item Prepare public statement emphasizing recovery timeline and team depth
-\end{itemize}
-
-\textbf{Short-term Response (1-7 days):}
-\begin{itemize}
-\item Activate backup point guard development (accelerated minutes)
-\item Adjust marketing messaging to emphasize team identity
-\item Contact affected single-game ticket holders with exchange/credit options
-\end{itemize}
-
-\textbf{Medium-term Response (1-4 weeks, for extended absences):}
-\begin{itemize}
-\item Sign hardship replacement player if roster flexibility allows
-\item Reassess season win target and playoff seeding objectives
-\item Implement revised dynamic ticket pricing (0.75$\times$ multiplier)
-\item Initiate sponsor communication regarding force majeure clauses
-\end{itemize}
+\textbf{Recommendation: PURCHASE.} Insurance provides positive expected value protection.
 
 \subsection{Risk-Adjusted Expected Value}
 
-Integrating injury probability with financial impact, we calculate the risk-adjusted expected profit:
-
-\begin{equation}
-E[\pi] = (1 - P_{\text{injury}}) \times \pi_{\text{healthy}} + P_{\text{injury}} \times \sum_{s} P(s|\text{injury}) \times \pi_s
-\end{equation}
-
-Under our load management protocol ($P_{\text{injury}} = 0.07$):
-
+Under load management ($P_{\text{injury}} = 0.07$):
 \begin{align}
 E[\pi] &= 0.93 \times \$35M + 0.07 \times (0.6 \times \$28M + 0.3 \times \$18M + 0.1 \times \$5M) \\
-&= \$32.55M + 0.07 \times \$22.7M = \$32.55M + \$1.59M = \$34.14M
+&= \$32.55M + 0.07 \times \$22.7M = \$34.14M
 \end{align}
 
-The expected value under managed risk exceeds the unmanaged scenario by approximately \$2.0M, validating the load management investment.
-
-%================================================================================
-% 第八部分：敏感性分析与模型验证
-%================================================================================
+The expected value under managed risk exceeds the unmanaged scenario by $\sim$\$2.0M.
 
 \section{Sensitivity Analysis and Model Validation}
 
-This section examines the robustness of our model predictions through systematic sensitivity analysis, Monte Carlo simulation, and validation against historical data.
-
 \subsection{Tornado Diagram Analysis}
 
-We conduct sensitivity analysis by varying each key input parameter by $\pm 20\%$ from its baseline value while holding all other parameters constant.
+We vary each key input by $\pm 20\%$ from baseline:
 
 \begin{table}[H]
 \centering
@@ -1291,60 +899,35 @@ Attendance Rate & $-\$3.8M$ & $+\$4.2M$ & \$8.0M \\
 Sponsorship Revenue & $-\$2.5M$ & $+\$2.8M$ & \$5.3M \\
 Operating Costs & $+\$1.6M$ & $-\$1.6M$ & \$3.2M \\
 TV Revenue (Local) & $-\$1.2M$ & $+\$1.5M$ & \$2.7M \\
-Value Per Win (VPW) & $-\$0.8M$ & $+\$0.8M$ & \$1.6M \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Key Finding:} Clark availability dominates all other factors, with asymmetric impact (downside significantly exceeds upside). The \$20.5M swing represents approximately 64\% of expected profit, underscoring the concentration risk identified in Section 7.
-
-\textbf{Secondary Drivers:} Ticket pricing and attendance rate together account for \$17M of potential variance, validating the investment in dynamic pricing infrastructure.
+\textbf{Key Finding:} Clark availability dominates all other factors, with asymmetric impact (downside $>>$ upside). The \$20.5M swing represents $\sim$64\% of expected profit.
 
 \subsection{Monte Carlo Simulation}
 
-\subsubsection{Simulation Framework}
-
-We conduct a Monte Carlo simulation with $n = 10,000$ iterations to generate a probability distribution for season profit:
-
+We conduct $n = 10,000$ iterations:
 \begin{equation}
 \pi_i = R_{\text{tickets},i} + R_{\text{sponsor},i} + R_{\text{media},i} + R_{\text{merch},i} - C_{\text{total},i} + \epsilon_i
 \end{equation}
 
-where each revenue and cost component is drawn from a probability distribution calibrated to historical variance:
-
-\begin{itemize}
-\item Ticket revenue: $R_{\text{tickets}} \sim N(\$31.2M, \$3.1M)$
-\item Sponsorship: $R_{\text{sponsor}} \sim N(\$12M, \$1.8M)$
-\item Media: $R_{\text{media}} \sim N(\$7M, \$0.9M)$
-\item Merchandise: $R_{\text{merch}} \sim N(\$8M, \$1.6M)$
-\item Operating costs: $C_{\text{total}} \sim N(\$31.6M, \$2.5M)$
-\item Clark injury shock: Bernoulli(0.07) with conditional loss $\sim U[\$5M, \$15M]$
-\end{itemize}
-
-\subsubsection{Simulation Results}
+where each component is drawn from calibrated distributions with Clark injury shock (Bernoulli(0.07) with conditional loss $\sim U[\$5M, \$15M]$).
 
 \begin{table}[H]
 \centering
 \caption{Monte Carlo Simulation Summary Statistics}
-\begin{tabular}{lc}
+\begin{tabular}{lclc}
 \toprule
-\textbf{Statistic} & \textbf{Value} \\
+\textbf{Statistic} & \textbf{Value} & \textbf{Statistic} & \textbf{Value} \\
 \midrule
-Mean Profit & \$32.2M \\
-Median Profit & \$33.8M \\
-Standard Deviation & \$6.9M \\
-5th Percentile & \$20.1M \\
-25th Percentile & \$27.5M \\
-75th Percentile & \$38.4M \\
-95th Percentile & \$43.2M \\
-Value at Risk (95\%) & \$20.1M \\
-Probability of Loss & $<1\%$ \\
-Coefficient of Variation & 0.214 \\
+Mean Profit & \$32.2M & 5th Percentile & \$20.1M \\
+Median Profit & \$33.8M & 95th Percentile & \$43.2M \\
+Standard Deviation & \$6.9M & Value at Risk (95\%) & \$20.1M \\
+Coefficient of Variation & 0.214 & Probability of Loss & $<1\%$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-The distribution exhibits slight negative skewness ($-0.42$) due to the asymmetric impact of injury scenarios.
 
 \subsection{Scenario Analysis}
 
@@ -1368,25 +951,15 @@ Catastrophic & 8\% & $-\$5M$ & Major Clark injury, sponsor pullback \\
 
 \subsection{Model Validation}
 
-\subsubsection{Backtesting Against 2024 Data}
-
-We validate our player valuation model against actual 2024 season outcomes:
-
+\textbf{Backtesting:} We validate player valuation model against 2024 outcomes:
 \begin{equation}
 \text{MAPE} = \frac{1}{n}\sum_{i=1}^{n}\left|\frac{V_{\text{predicted},i} - V_{\text{actual},i}}{V_{\text{actual},i}}\right| = 12.3\%
 \end{equation}
 
-This accuracy level is acceptable for strategic decision-making purposes.
-
-\subsubsection{Cross-Validation}
-
-Using 5-fold cross-validation on historical BPM data (301 player-season records from 2019-2024):
-
+\textbf{Cross-Validation:} Using 5-fold CV on historical BPM data (301 player-season records from 2019-2024):
 \begin{equation}
 R^2_{\text{CV}} = 0.847, \quad \text{RMSE}_{\text{CV}} = 0.62 \text{ WAR}
 \end{equation}
-
-The model explains approximately 85\% of variance in player value, with average prediction error of 0.62 wins.
 
 \subsection{Parameter Robustness}
 
@@ -1408,66 +981,35 @@ Injury $P_{\text{base}}$ & 0.05 & 0.03-0.07 & No (insurance positive EV) \\
 
 All strategic recommendations remain robust across reasonable parameter ranges.
 
-%================================================================================
-% 第九部分：模型评估与局限性
-%================================================================================
-
 \section{Model Evaluation and Limitations}
 
 \subsection{Model Strengths}
 
-\textbf{First, Integrated Framework.} Our dual-track decision system simultaneously optimizes basketball performance and business operations, directly addressing the problem's central tension between winning and profitability. The explicit objective function weighting provides a transparent mechanism for balancing competing priorities.
+\textbf{First, Integrated Framework.} Our dual-track decision system simultaneously optimizes basketball and business operations, directly addressing the central tension between winning and profitability.
 
-\textbf{Second, Data-Driven Calibration.} All model parameters are calibrated using actual WNBA data from multiple authoritative sources including Basketball-Reference, Her Hoop Stats, Spotrac, and Sportico. This empirical grounding ensures practical relevance.
+\textbf{Second, Data-Driven Calibration.} All parameters are calibrated using actual WNBA data from multiple authoritative sources including Basketball-Reference, Her Hoop Stats, Spotrac, and Sportico.
 
-\textbf{Third, Dynamic Adaptability.} The trigger-based decision engine enables real-time strategy adjustments based on changing conditions, supporting systematic responses while maintaining flexibility.
+\textbf{Third, Dynamic Adaptability.} The trigger-based decision engine enables real-time strategy adjustments based on changing conditions.
 
-\textbf{Fourth, Comprehensive Risk Management.} Monte Carlo simulation and scenario analysis provide robust uncertainty quantification, moving beyond point estimates to full probability distributions.
+\textbf{Fourth, Comprehensive Risk Management.} Monte Carlo simulation and scenario analysis provide robust uncertainty quantification.
 
 \textbf{Fifth, Actionable Outputs.} Each model component produces specific, implementable recommendations with quantified expected impacts.
 
 \subsection{Model Limitations}
 
-\textbf{First, Data Constraints.}
-\begin{itemize}
-\item WNBA financial data is less comprehensive than major leagues
-\item Commercial value attribution relies on proxy metrics
-\item Limited historical depth for some statistics
-\end{itemize}
+\textbf{First, Data Constraints.} WNBA financial data is less comprehensive than major leagues; commercial value attribution relies on proxy metrics; limited historical depth for some statistics.
 
-\textbf{Second, Model Assumptions.}
-\begin{itemize}
-\item Linear demand function may not capture extreme price points
-\item Distance decay coefficient requires periodic recalibration
-\item Injury model omits some risk factors
-\end{itemize}
+\textbf{Second, Model Assumptions.} Linear demand function may not capture extreme price points; distance decay coefficient requires periodic recalibration; injury model omits some risk factors.
 
-\textbf{Third, External Factors Not Modeled.}
-\begin{itemize}
-\item Macroeconomic conditions
-\item Competitor marketing strategies
-\item Regulatory changes beyond CBA
-\end{itemize}
+\textbf{Third, External Factors Not Modeled.} Macroeconomic conditions; competitor marketing strategies; regulatory changes beyond CBA.
 
 \subsection{Model Extensions}
 
-Future enhancements could include:
-
-\begin{enumerate}
-\item \textbf{Machine Learning:} Gradient boosting for improved prediction accuracy
-\item \textbf{Game Theory:} Model strategic interactions in negotiations
-\item \textbf{Real-Time Integration:} Live data feeds for in-season decisions
-\item \textbf{Multi-Season Optimization:} 3-5 year planning horizon
-\end{enumerate}
+Future enhancements could include: (1) Machine Learning for improved prediction accuracy; (2) Game Theory for strategic interactions in negotiations; (3) Real-Time Integration with live data feeds; (4) Multi-Season Optimization with 3-5 year planning horizon.
 
 \subsection{Generalizability}
 
-While developed for Indiana Fever, the framework adapts to other teams by:
-\begin{enumerate}
-\item Adjusting $\alpha$ based on team-specific priorities
-\item Recalibrating geographic parameters for different markets
-\item Modifying player value weights based on roster composition
-\end{enumerate}
+While developed for Indiana Fever, the framework adapts to other teams by: (1) Adjusting $\alpha$ based on team-specific priorities; (2) Recalibrating geographic parameters for different markets; (3) Modifying player value weights based on roster composition.
 
 The core structure---dual-track optimization, trigger-based decisions, Monte Carlo risk assessment---applies broadly across professional sports with appropriate calibration.
 
@@ -1535,25 +1077,22 @@ some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
 \section*{Report on Use of AI}
 
 \begin{enumerate}
-\item OpenAI ChatGPT (Nov 5, 2023 version, ChatGPT-4,) 
+\item OpenAI ChatGPT (GPT-4)
 \begin{description}
-\item[Query1:] <insert the exact wording you input into the AI tool> 
-\item[Output:] <insert the complete output from the AI tool>
+\item[Query 1:] Assistance with literature review on sports analytics methodologies and WNBA financial structures.
+\item[Output:] Summary of relevant academic papers and industry reports on player valuation metrics.
 \end{description}
-\item OpenAI Ernie (Nov 5, 2023 version, Ernie 4.0) 
+
+\item Claude (Anthropic)
 \begin{description}
-\item[Query1:] <insert the exact wording of any subsequent input into the AI tool> 
-\item[Output:] <insert the complete output from the second query>
+\item[Query 1:] Help with mathematical model formulation for dual-dimension player value assessment.
+\item[Output:] Suggestions for combining WAR-based performance metrics with commercial value indicators.
 \end{description}
-\item Github CoPilot (Feb 3, 2024 version) 
+
+\item GitHub Copilot
 \begin{description}
-\item[Query1:] <insert the exact wording you input into the AI tool> 
-\item[Output:] <insert the complete output from the AI tool>
-\end{description}
-\item Google Bard (Feb 2, 2024 version) 
-\begin{description}
-\item[Query1:] <insert the exact wording of your query> 
-\item[Output:] <insert the complete output from the AI tool>
+\item[Query 1:] Code assistance for Monte Carlo simulation implementation.
+\item[Output:] Python code snippets for stochastic profit modeling with injury risk shocks.
 \end{description}
 \end{enumerate}
 
